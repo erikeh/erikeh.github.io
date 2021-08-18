@@ -2,6 +2,7 @@ import * as React from "react";
 import { ReactElement } from "react";
 import styled from "styled-components";
 import Header from "./Header";
+import { motion } from "framer-motion";
 
 const LandingPageContainer = styled.div`
   display: flex;
@@ -19,17 +20,37 @@ const IntroContainer = styled.h2`
   padding-top: 50px;
 `;
 
-const ColoredHighlightedName = styled.span`
+const ColoredHighlightedName = styled(motion.div)`
   color: red;
-  width: auto;
+  width: fit-content;
+  display: inline-flex;
 `;
 
 function LandingPage(): ReactElement {
+  const nameVariant = {
+    start: {},
+    hover: {
+      // scale: 1.1,
+      skew: 5,
+      transition: {
+        duration: 1,
+        repeat: Infinity,
+        repeatType: "reverse",
+      },
+    },
+  };
   return (
     <LandingPageContainer>
       <Header />
       <IntroContainer>
-        {`My name is`} <ColoredHighlightedName>Erik Oh</ColoredHighlightedName>{" "}
+        {`My name is`}{" "}
+        <ColoredHighlightedName
+          variants={nameVariant}
+          whileHover="hover"
+          transition={{ duration: 1 }}
+        >
+          Erik Oh
+        </ColoredHighlightedName>{" "}
         {`and I'm a full-stack software engineer`}
       </IntroContainer>
     </LandingPageContainer>

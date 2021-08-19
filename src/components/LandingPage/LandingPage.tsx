@@ -36,22 +36,11 @@ const ColoredHighlightedCharacter = styled(motion.span)`
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  -webkit-transition: background-image 0.5s ease-in-out;
-  transition: background-image 0.5s ease-in-out;
+  -webkit-transition: background-image 0.2s ease-in-out;
+  transition: background-image 0.2s ease-in-out;
 `;
 
 function LandingPage(): ReactElement {
-  const [pos, setPos] = useState([50, 0]);
-
-  const handleMouseMove = (e: SyntheticEvent<Element, MouseEvent>) => {
-    const { left: offsetLeft, top: offsetTop } =
-      e.currentTarget.getBoundingClientRect();
-    const { innerWidth: width, innerHeight: height } = window;
-    const x = ((e.nativeEvent.clientX - offsetLeft) / width) * 400;
-    const y = ((e.nativeEvent.clientY - offsetTop) / height) * 400;
-    setPos([x, y]);
-  };
-
   // store variants in array to assign a variant to each character of my name
   const variants = [eVariant, rVariant, iVariant, kVariant, oVariant, hVariant];
   const firstName = `Erik`;

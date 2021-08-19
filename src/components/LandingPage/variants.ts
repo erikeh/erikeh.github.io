@@ -4,6 +4,8 @@ import diamondSunset from '../../assets/img/diamond-sunset.svg';
 import swirl from '../../assets/img/swirl.jpg';
 import terrazzo from '../../assets/img/terrazzo.jpg';
 import redbg from '../../assets/img/red.jpeg';
+import lego from '../../assets/img/lego.jpg';
+
 
 export const eVariant = {
   initial: {
@@ -25,16 +27,18 @@ export const eVariant = {
   },
 };
 
+// find a better svg
 export const rVariant = {
   initial: {
     backgroundImage: `url(${redbg})`,
+    backgroundPosition: `--20% 0%`,
     transition: {
       duration: 0.8,
     },
   },
   hover: {
     backgroundImage: `url(${rainbowVortex})`,
-    backgroundPosition: `300% 150%`,
+    backgroundPosition: `-220% 36%`,
     transition: {
       type: 'tween',
       duration: 7,
@@ -45,6 +49,7 @@ export const rVariant = {
   },
 };
 
+// find a better svg
 export const iVariant = {
   initial: {
     backgroundImage: `url(${redbg})`,
@@ -73,11 +78,11 @@ export const kVariant = {
     },
   },
   hover: {
-    backgroundImage: `url(${polkaDot})`,
-    backgroundPosition: `300% 300%`,
+    backgroundImage: `url(${lego})`,
+    backgroundPosition: `0% 300%`,
     transition: {
-      type: 'tween',
-      duration: 3,
+      type: 'spring',
+      duration: 12,
       ease: 'linear',
       repeat: Infinity,
       repeatType: 'mirror',

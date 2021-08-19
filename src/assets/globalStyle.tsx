@@ -51,7 +51,7 @@ input{
 body {
   background-color: black;
   font-family: 'IBM Plex Sans', sans-serif;
-  color: white;
+  color: white
 }
 `;
 

@@ -3,9 +3,14 @@ import { ReactElement, useState, SyntheticEvent } from 'react';
 import styled, { css } from 'styled-components';
 import Header from './Header';
 import { motion, AnimatePresence, useAnimation } from 'framer-motion';
-import bgimg from '../../assets/img/swirl.jpg';
-import bgimg2 from '../../assets/img/terrazzo.jpg';
-import redbg from '../../assets/img/red.jpeg';
+import {
+  eVariant,
+  rVariant,
+  iVariant,
+  kVariant,
+  oVariant,
+  hVariant,
+} from './variants';
 
 const LandingPageContainer = styled.div`
   display: flex;
@@ -25,15 +30,14 @@ const IntroContainer = styled(motion.h2)`
   cursor: default;
 `;
 
-const ColoredHighlightedName = styled(motion.div)`
-  background-size: 150%;
-  width: fit-content;
+const ColoredHighlightedCharacter = styled(motion.span)`
+  background-size: 550%;
   display: inline-flex;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  -webkit-transition: background-image 1s ease-in-out;
-  transition: background-image 1s ease-in-out;
+  -webkit-transition: background-image 0.5s ease-in-out;
+  transition: background-image 0.5s ease-in-out;
 `;
 
 function LandingPage(): ReactElement {
@@ -43,27 +47,27 @@ function LandingPage(): ReactElement {
     const { left: offsetLeft, top: offsetTop } =
       e.currentTarget.getBoundingClientRect();
     const { innerWidth: width, innerHeight: height } = window;
-    const x = ((e.nativeEvent.clientX - offsetLeft) / width) * 200;
-    const y = ((e.nativeEvent.clientY - offsetTop) / height) * 200;
+    const x = ((e.nativeEvent.clientX - offsetLeft) / width) * 400;
+    const y = ((e.nativeEvent.clientY - offsetTop) / height) * 400;
     setPos([x, y]);
   };
 
-  const nameVariant = {
-    start: {},
-    initial: {
-      backgroundImage: `url(${redbg})`,
-      transition: {
-        duration: 0.8,
-      }
-    },
-    hover: {
-      backgroundImage: `url(${bgimg2})`,
-      backgroundPosition: `${pos[0]}% ${pos[1]}%`,
-      transition: {
-        duration: 0.8,
-      },
-    },
-  };
+  // store variants in array to assign a variant to each character of my name
+  const variants = [eVariant, rVariant, iVariant, kVariant, oVariant, hVariant];
+  const firstName = `Erik`;
+  const lastName = 'Oh';
+
+  const animateName = (name) =>
+    name.split('').map((char, i) => (
+      <ColoredHighlightedCharacter
+        key={i}
+        variants={variants.shift()}
+        initial="initial"
+        whileHover="hover"
+      >
+        {char}
+      </ColoredHighlightedCharacter>
+    ));
 
   return (
     <LandingPageContainer>
@@ -72,25 +76,15 @@ function LandingPage(): ReactElement {
         <IntroContainer
           initial={{
             opacity: 0,
-            y: 18,
+            y: 65,
           }}
           animate={{
             opacity: 1,
             y: 0,
           }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.8, staggerChildren: 0.3 }}
         >
-          {`My name is`}{' '}
-          <ColoredHighlightedName
-            variants={nameVariant}
-            initial="initial"
-            whileHover="hover"
-            // transition={{ duration: 1 }}
-            onMouseMove={handleMouseMove}
-            position={pos}
-          >
-            Erik Oh
-          </ColoredHighlightedName>{' '}
+          {`My name is`} {animateName(firstName)} {animateName(lastName)}{' '}
           {`and I'm a full-stack software engineer`}
         </IntroContainer>
       </AnimatePresence>

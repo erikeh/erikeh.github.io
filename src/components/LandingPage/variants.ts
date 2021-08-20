@@ -5,24 +5,27 @@ import swirl from '../../assets/img/swirl.jpg';
 import terrazzo from '../../assets/img/terrazzo.jpg';
 import redbg from '../../assets/img/red.jpeg';
 import lego from '../../assets/img/lego.jpg';
-
+import forest from '../../assets/img/forest.jpg';
 
 export const eVariant = {
   initial: {
     backgroundImage: `url(${redbg})`,
+    backgroundSize: '400%',
+    backgroundPosition: '15% 15%',
     transition: {
       duration: 0.8,
     },
   },
   hover: {
     backgroundImage: `url(${polkaDot})`,
-    backgroundPosition: `300% 300%`,
+    // backgroundSize: '450% 450%',
+    backgroundPosition: `340% 340%`,
     transition: {
       type: 'tween',
-      duration: 3,
+      duration: 4,
       ease: 'linear',
       repeat: Infinity,
-      repeatType: 'mirror',
+      // repeatType: 'mirror',
     },
   },
 };
@@ -40,6 +43,12 @@ export const rVariant = {
     backgroundImage: `url(${rainbowVortex})`,
     backgroundPosition: `-220% 36%`,
     transition: {
+      paddingLeft: {
+        duration: 0.5,
+      },
+      paddingRight: {
+        duration: 0.5,
+      },
       type: 'tween',
       duration: 7,
       ease: 'linear',
@@ -58,12 +67,18 @@ export const iVariant = {
     },
   },
   hover: {
-    backgroundImage: `url(${diamondSunset})`,
-    backgroundPosition: `300% 300%`,
+    backgroundImage: `url(${forest})`,
+    backgroundPosition: `0% 300%`,
     transition: {
+      paddingLeft: {
+        duration: 0.5,
+      },
+      paddingRight: {
+        duration: 0.5,
+      },
       type: 'tween',
-      duration: 3,
-      ease: 'linear',
+      duration: 7,
+      ease: 'easeOut',
       repeat: Infinity,
       repeatType: 'mirror',
     },
@@ -79,13 +94,13 @@ export const kVariant = {
   },
   hover: {
     backgroundImage: `url(${lego})`,
-    backgroundPosition: `0% 300%`,
+    backgroundPosition: `20% -250%`,
     transition: {
       type: 'spring',
       duration: 12,
-      ease: 'linear',
+      ease: 'circOut',
       repeat: Infinity,
-      repeatType: 'mirror',
+      repeatType: 'reverse',
     },
   },
 };
@@ -93,6 +108,8 @@ export const kVariant = {
 export const oVariant = {
   initial: {
     backgroundImage: `url(${redbg})`,
+    backgroundSize: '500%',
+    backgroundPosition: '20% 20%',
     transition: {
       duration: 0.8,
     },
@@ -100,6 +117,8 @@ export const oVariant = {
   hover: {
     backgroundImage: `url(${swirl})`,
     backgroundPosition: `300% 300%`,
+    // transformOrigin: 'center',
+    backgroundSize: '500%',
     transition: {
       type: 'tween',
       duration: 6,

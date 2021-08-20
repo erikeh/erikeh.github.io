@@ -53,6 +53,10 @@ body {
   font-family: 'IBM Plex Sans', sans-serif;
   color: white
 }
+
+svg {
+  margin: -3px;
+}
 `;
 
 export default GlobalStyle;

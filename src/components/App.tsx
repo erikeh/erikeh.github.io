@@ -6,7 +6,9 @@ import styled from 'styled-components';
 
 import GlobalStyle from '../assets/globalStyle';
 
-const AppDiv = styled.div``;
+const AppDiv = styled.div`
+  height: 100%;
+`;
 
 const App = () => {
   return (

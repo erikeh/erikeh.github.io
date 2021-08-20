@@ -20,16 +20,37 @@ const LandingPageContainer = styled.div`
   height: 100vh;
 `;
 
+const HorizontalFlex = styled.div`
+  display: flex;
+  flex-direction: row;
+  @media screen and (max-width: 580px) {
+    justify-content: center;
+  }
+`;
+
 const IntroContainer = styled(motion.h2)`
   color: #f1faee;
   border-radius: 7px;
-  max-width: 760px;
-
-  font-size: 80px;
+  flex: 0 1 760px;
+  font-size: 5em;
   font-weight: 600;
-  margin-left: 10%;
-  padding-top: 50px;
+  margin-left: 15%;
+  padding-top: 70px;
   cursor: default;
+  @media screen and (max-width: 870px) {
+    font-size: 60px;
+    flex: 0 1 730px;
+  }
+  @media screen and (max-width: 680px) {
+    font-size: 45px;
+    flex: 0 1 470px;
+    margin-left: 5px 0;
+    align-self: center;
+  }
+  @media screen and (max-width: 580px) {
+    margin-left: 0;
+    text-align: center;
+  }
 `;
 
 const ColoredHighlightedCharacter = styled(motion.span)`
@@ -44,7 +65,11 @@ const ColoredHighlightedCharacter = styled(motion.span)`
 
 const ButtonContainer = styled.div`
   display: flex;
+  flex: 1 1 auto;
   justify-content: flex-start;
+  @media screen and (max-width: 580px) {
+    justify-content: center;
+  }
 `;
 
 const ShowWorkButton = styled(motion.button)`
@@ -59,6 +84,10 @@ const ShowWorkButton = styled(motion.button)`
   margin-left: 15%;
   margin-top: 50px;
   padding: 8px;
+  @media screen and (max-width: 580px) {
+    margin-left: 0;
+    width: 40%;
+  }
 `;
 
 function LandingPage(): ReactElement {
@@ -83,20 +112,22 @@ function LandingPage(): ReactElement {
     <LandingPageContainer>
       <Header />
       <AnimatePresence>
-        <IntroContainer
-          initial={{
-            opacity: 0,
-            y: 65,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{ duration: 0.8, staggerChildren: 1 }}
-        >
-          {`My name is`} {animateName(firstName)} {animateName(lastName)}{' '}
-          {`and I'm a full-stack software engineer`}
-        </IntroContainer>
+        <HorizontalFlex>
+          <IntroContainer
+            initial={{
+              opacity: 0,
+              y: 65,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{ duration: 0.8, staggerChildren: 1 }}
+          >
+            {`My name is`} {animateName(firstName)} {animateName(lastName)}{' '}
+            {`and I'm a full-stack software engineer`}
+          </IntroContainer>
+        </HorizontalFlex>
         <ButtonContainer>
           <ShowWorkButton
             initial={{

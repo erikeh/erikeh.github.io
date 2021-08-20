@@ -6,6 +6,7 @@ import terrazzo from '../../assets/img/terrazzo.jpg';
 import redbg from '../../assets/img/red.jpeg';
 import lego from '../../assets/img/lego.jpg';
 import forest from '../../assets/img/forest.jpg';
+import stingrays from '../../assets/img/stingrays.svg';
 
 export const eVariant = {
   initial: {
@@ -18,14 +19,12 @@ export const eVariant = {
   },
   hover: {
     backgroundImage: `url(${polkaDot})`,
-    // backgroundSize: '450% 450%',
     backgroundPosition: `340% 340%`,
     transition: {
       type: 'tween',
       duration: 4,
       ease: 'linear',
       repeat: Infinity,
-      // repeatType: 'mirror',
     },
   },
 };
@@ -108,21 +107,21 @@ export const kVariant = {
 export const oVariant = {
   initial: {
     backgroundImage: `url(${redbg})`,
-    backgroundSize: '500%',
+    backgroundSize: '300%',
     backgroundPosition: '20% 20%',
     transition: {
       duration: 0.8,
     },
   },
   hover: {
-    backgroundImage: `url(${swirl})`,
+    backgroundImage: `url(${stingrays})`,
     backgroundPosition: `300% 300%`,
     // transformOrigin: 'center',
-    backgroundSize: '500%',
+    backgroundSize: '300%',
     transition: {
       type: 'tween',
       duration: 6,
-      ease: 'circIn',
+      ease: 'circOut',
       repeat: Infinity,
       repeatType: 'reverse',
     },

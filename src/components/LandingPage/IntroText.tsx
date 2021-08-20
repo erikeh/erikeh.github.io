@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { ReactElement, useState, SyntheticEvent } from 'react';
-import styled, { css } from 'styled-components';
-import Header from './Header';
-import { motion, AnimatePresence, useAnimation } from 'framer-motion';
+import { ReactElement } from 'react';
+import styled from 'styled-components';
+import { motion, useAnimation } from 'framer-motion';
 import {
   eVariant,
   rVariant,
@@ -13,43 +12,37 @@ import {
 } from './variants';
 import screen from '../../media/mediaQueries';
 
-const HorizontalFlex = styled.div`
+const AnimationDiv = styled(motion.div)``;
+
+const IntroContainer = styled(motion.div)`
   display: flex;
-  flex-direction: row;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
   ${screen.small`
-    justify-content: center;
-    width: 80%;
+    align-items: center;
   `}
 `;
 
-const IntroContainer = styled(motion.h2)`
+const OverFlowHider = styled.div`
+  overflow: hidden;
+`;
+
+const IntroLine = styled(motion.h2)`
+  flex: 0 1 100%;
+  /* width: 100%; */
+  /* height: 8.5vh; */
   color: #f1faee;
-  border-radius: 7px;
-  flex: 0 1 760px;
-  font-size: 5em;
+  font-size: clamp(1rem, 8vw, 5rem);
   font-weight: 600;
-  margin-left: 15%;
-  margin-right: 15%;
-  padding-top: 70px;
   cursor: default;
-  ${screen.large`
-    font-size: 60px;
-    flex: 0 1 730px;
-  `}
-  ${screen.medium`
-    font-size: 4em;
-    flex: 0 1 470px;
-    margin-left: 5px 0;
-  `}
+  /* overflow: hidden; */
   ${screen.small`
-    font-size: 1.7em;
-    margin-left: 3%;
-    margin-right: 3%;
+    font-size: clamp(0.5rem, 9vw, 5rem);
     text-align: center;
   `}
 
   @media screen and (min-width: 1800px) {
-    flex: 0 1 1000px;
     font-size: 6.7em;
   }
 `;
@@ -103,29 +96,59 @@ function IntroText(): ReactElement {
         variants={variants[char]}
         initial="initial"
         whileHover="hover"
-        onTap={() => animationControls[char].start('hover')}
+        onTap={() => animationControls[char].start('tap')}
       >
         {char}
       </ColoredHighlightedCharacter>
     ));
+
+  const intro = {
+    hidden: {
+      opacity: 1,
+    },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.18,
+      },
+    },
+  };
+
+  const introItem = {
+    hidden: {
+      opacity: 0,
+      transformOrigin: 'top left',
+      rotate: 20,
+    },
+    show: {
+      rotate: 0,
+      opacity: 1,
+      transition: {
+        opacity: {
+          duration: 1,
+        },
+        type: 'tween',
+        ease: 'circOut',
+        duration: 0.7,
+      },
+    },
+  };
+
   return (
     <>
-      <HorizontalFlex>
-        <IntroContainer
-          initial={{
-            opacity: 0,
-            y: 65,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{ duration: 0.8 }}
-        >
-          {`My name is`} {animateName(firstName)} {animateName(lastName)}{' '}
-          {`and I'm a full-stack software engineer`}
-        </IntroContainer>
-      </HorizontalFlex>
+      <IntroContainer variants={intro} initial="hidden" animate="show">
+        <OverFlowHider>
+          <IntroLine variants={introItem}>
+            {`My name is`} {animateName(firstName)} {animateName(lastName)}
+          </IntroLine>
+        </OverFlowHider>
+        <OverFlowHider>
+          <IntroLine variants={introItem}>{`and I'm a full-stack`}</IntroLine>
+        </OverFlowHider>
+        <OverFlowHider>
+          <IntroLine variants={introItem}>{`software engineer`}</IntroLine>
+        </OverFlowHider>
+      </IntroContainer>
     </>
   );
 }

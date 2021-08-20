@@ -16,6 +16,13 @@ const LandingPageContainer = styled.div`
   height: 100vh;
 `;
 
+const TextButtonContainer = styled.div`
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  width: 90%;
+`
+
 const ButtonContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -36,7 +43,7 @@ const ShowWorkButton = styled(motion.button)`
   border: none;
   width: 170px;
   height: 45px;
-  margin-left: 15%;
+  /* margin-left: 15%; */
   margin-top: 50px;
   padding: 8px;
   ${screen.small`
@@ -53,25 +60,27 @@ function LandingPage(): ReactElement {
     <LandingPageContainer>
       <Header />
       <AnimatePresence>
-        <IntroText />
-        <ButtonContainer>
-          <ShowWorkButton
-            initial={{
-              opacity: 0,
-              y: 20,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.5,
-              delay: 2.5,
-            }}
-          >
-            Show me your work
-          </ShowWorkButton>
-        </ButtonContainer>
+        <TextButtonContainer>
+          <IntroText />
+          <ButtonContainer>
+            <ShowWorkButton
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.5,
+                delay: 2.5,
+              }}
+            >
+              Show me your work
+            </ShowWorkButton>
+          </ButtonContainer>
+        </TextButtonContainer>
       </AnimatePresence>
     </LandingPageContainer>
   );

@@ -1,14 +1,12 @@
-import * as React from "react";
+import * as React from 'react';
 import LandingPage from './LandingPage/LandingPage';
-
-import { hot } from "react-hot-loader";
+import About from './About/About';
+import { hot } from 'react-hot-loader';
 import styled from 'styled-components';
 
 import GlobalStyle from '../assets/globalStyle';
 
-const AppDiv = styled.div`
-
-`
+const AppDiv = styled.div``;
 
 const App = () => {
   return (
@@ -16,12 +14,11 @@ const App = () => {
       <GlobalStyle />
       {/* <NavBarElement /> */}
       <LandingPage />
-
-      {/* <About /> */}
+      <About />
       {/* <Projects /> */}
     </AppDiv>
   );
-}
+};
 
 declare let module: Record<string, unknown>;
 

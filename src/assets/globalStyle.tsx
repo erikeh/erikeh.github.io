@@ -49,7 +49,7 @@ input{
 }
 
 body {
-  background-color: black;
+  background-color: #001219;
   font-family: 'IBM Plex Sans', sans-serif;
   color: white
 }

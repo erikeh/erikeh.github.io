@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ReactElement, useState } from 'react';
+import { ReactElement } from 'react';
 import IntroText from './IntroText';
 import styled from 'styled-components';
 import Header from './Header';
@@ -20,8 +20,11 @@ const TextButtonContainer = styled.div`
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  width: 90%;
-`
+  width: 80%;
+  ${screen.small`
+    width: 90%;
+  `}
+`;
 
 const ButtonContainer = styled.div`
   display: flex;

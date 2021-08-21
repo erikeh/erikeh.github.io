@@ -1,6 +1,6 @@
 import * as React from 'react';
-import LandingPage from './LandingPage/LandingPage';
-import About from './About/About';
+import LandingPage from './LandingPage';
+import About from './About';
 import { hot } from 'react-hot-loader';
 import styled from 'styled-components';
 

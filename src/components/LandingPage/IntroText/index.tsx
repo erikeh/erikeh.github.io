@@ -10,9 +10,7 @@ import {
   oVariant,
   hVariant,
 } from './variants';
-import screen from '../../media/mediaQueries';
-
-const AnimationDiv = styled(motion.div)``;
+import screen from '../../../media/mediaQueries';
 
 const IntroContainer = styled(motion.div)`
   display: flex;
@@ -30,13 +28,10 @@ const OverFlowHider = styled.div`
 
 const IntroLine = styled(motion.h2)`
   flex: 0 1 100%;
-  /* width: 100%; */
-  /* height: 8.5vh; */
   color: #f1faee;
   font-size: clamp(1rem, 8vw, 5rem);
   font-weight: 600;
   cursor: default;
-  /* overflow: hidden; */
   ${screen.small`
     font-size: clamp(0.5rem, 9vw, 5rem);
     text-align: center;
@@ -109,7 +104,7 @@ function IntroText(): ReactElement {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.18,
+        staggerChildren: 0.1,
       },
     },
   };
@@ -128,7 +123,7 @@ function IntroText(): ReactElement {
           duration: 1,
         },
         type: 'tween',
-        ease: 'circOut',
+        ease: 'easeOut',
         duration: 0.7,
       },
     },

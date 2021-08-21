@@ -1,12 +1,10 @@
-import polkaDot from '../../assets/img/polka-dots.svg';
-import rainbowVortex from '../../assets/img/rainbow-vortex.svg';
-import diamondSunset from '../../assets/img/diamond-sunset.svg';
-import swirl from '../../assets/img/swirl.jpg';
-import terrazzo from '../../assets/img/terrazzo.jpg';
-import redbg from '../../assets/img/red.jpeg';
-import lego from '../../assets/img/lego.jpg';
-import forest from '../../assets/img/forest.jpg';
-import stingrays from '../../assets/img/stingrays.svg';
+import polkaDot from '../../../assets/img/textBackground/polka-dots.svg';
+import rainbowVortex from '../../../assets/img/textBackground/rainbow-vortex.svg';
+import terrazzo from '../../../assets/img/textBackground/terrazzo.jpg';
+import redbg from '../../../assets/img/textBackground/red.jpeg';
+import lego from '../../../assets/img/textBackground/lego.jpg';
+import forest from '../../../assets/img/textBackground/forest.jpg';
+import stingrays from '../../../assets/img/textBackground/stingrays.svg';
 
 export const eVariant = {
   initial: {

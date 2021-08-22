@@ -9,6 +9,8 @@ import {
   kVariant,
   oVariant,
   hVariant,
+  intro,
+  introItem,
 } from './variants';
 import screen from '../../../media/mediaQueries';
 
@@ -97,54 +99,20 @@ function IntroText(): ReactElement {
       </ColoredHighlightedCharacter>
     ));
 
-  const intro = {
-    hidden: {
-      opacity: 1,
-    },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const introItem = {
-    hidden: {
-      opacity: 0,
-      transformOrigin: 'top left',
-      rotate: 20,
-    },
-    show: {
-      rotate: 0,
-      opacity: 1,
-      transition: {
-        opacity: {
-          duration: 1,
-        },
-        type: 'tween',
-        ease: 'easeOut',
-        duration: 0.7,
-      },
-    },
-  };
-
   return (
-    <>
-      <IntroContainer variants={intro} initial="hidden" animate="show">
-        <OverFlowHider>
-          <IntroLine variants={introItem}>
-            {`My name is`} {animateName(firstName)} {animateName(lastName)}
-          </IntroLine>
-        </OverFlowHider>
-        <OverFlowHider>
-          <IntroLine variants={introItem}>{`and I'm a full-stack`}</IntroLine>
-        </OverFlowHider>
-        <OverFlowHider>
-          <IntroLine variants={introItem}>{`software engineer`}</IntroLine>
-        </OverFlowHider>
-      </IntroContainer>
-    </>
+    <IntroContainer variants={intro} initial="hidden" animate="show">
+      <OverFlowHider>
+        <IntroLine variants={introItem}>
+          {`My name is`} {animateName(firstName)} {animateName(lastName)}
+        </IntroLine>
+      </OverFlowHider>
+      <OverFlowHider>
+        <IntroLine variants={introItem}>{`and I'm a full-stack`}</IntroLine>
+      </OverFlowHider>
+      <OverFlowHider>
+        <IntroLine variants={introItem}>{`software engineer`}</IntroLine>
+      </OverFlowHider>
+    </IntroContainer>
   );
 }
 

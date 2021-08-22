@@ -1,7 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 
-import { SectionHeader, SubHeaderText, ImageContainer } from '../shared/styles';
+import { SectionHeader, SubHeaderText, ImageWrapper } from '../shared/styles';
 
 // individual HTML elements
 export const AboutContainer = styled.div`
@@ -30,12 +30,15 @@ export const ProfileAndBio = styled.div`
   justify-content: space-around;
 `;
 
-export const ProfilePictureContainer = styled(ImageContainer)`
-  width: 300px;
+export const ProfilePictureWrapper = styled(ImageWrapper)`
+  flex: 0 1 300px;
+  align-items: center;
+  margin-right: 30px;
 `;
 
 export const ProfilePicture = styled.img`
   width: 100%;
+  height: auto;
   border-radius: 100px;
 `;
 
@@ -104,7 +107,7 @@ export const AboutSubHeader = ({
 };
 
 // Logo Image Elements
-const LogoContainer = styled(ImageContainer)`
+const LogoContainer = styled(ImageWrapper)`
   display: flex;
   width: 60px;
   margin-right: 20px;

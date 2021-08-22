@@ -38,6 +38,7 @@ const ButtonContainer = styled.div`
 `;
 
 const ShowWorkButton = styled(motion.button)`
+  cursor: pointer;
   font-size: 15px;
   font-weight: 100;
   background-color: #005f73;
@@ -77,7 +78,7 @@ function LandingPage(): ReactElement {
               }}
               transition={{
                 duration: 0.5,
-                delay: 2.5,
+                delay: 0.2,
               }}
             >
               Show me your work

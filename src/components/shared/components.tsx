@@ -8,15 +8,17 @@ import {
 
 interface SubHeaderProps {
   subHeader: string;
+  color?: string;
 }
 
 export const SubHeader = ({
   subHeader,
+  color,
 }: SubHeaderProps): React.ReactElement => {
   return (
     <AlignFlexStart>
       <SubHeaderContainer>
-        <Text>{subHeader}</Text>
+        <Text color={color}>{subHeader}</Text>
         <SubHeaderDecoration>-</SubHeaderDecoration>
       </SubHeaderContainer>
     </AlignFlexStart>

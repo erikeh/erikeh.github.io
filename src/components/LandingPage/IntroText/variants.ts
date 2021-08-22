@@ -145,3 +145,35 @@ export const hVariant = {
   },
 };
 
+// variants for intro text animation
+export const intro = {
+  hidden: {
+    opacity: 1,
+  },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+export const introItem = {
+  hidden: {
+    opacity: 0,
+    transformOrigin: 'top left',
+    rotate: 20,
+  },
+  show: {
+    rotate: 0,
+    opacity: 1,
+    transition: {
+      opacity: {
+        duration: 1,
+      },
+      type: 'tween',
+      ease: 'easeOut',
+      duration: 2,
+    },
+  },
+};

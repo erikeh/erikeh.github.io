@@ -1,6 +1,7 @@
 import * as React from 'react';
 import LandingPage from './LandingPage';
 import About from './About';
+import Projects from './Projects';
 import { hot } from 'react-hot-loader';
 import styled from 'styled-components';
 
@@ -16,8 +17,8 @@ const App = () => {
       <GlobalStyle />
       {/* <NavBarElement /> */}
       <LandingPage />
+      <Projects />
       <About />
-      {/* <Projects /> */}
     </AppDiv>
   );
 };

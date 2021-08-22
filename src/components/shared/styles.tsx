@@ -16,7 +16,7 @@ export const SubHeaderText = styled.h3`
   font-weight: 500;
 `;
 
-export const ImageContainer = styled.div`
+export const ImageWrapper = styled.div`
   display: flex;
   justify-content: center;
 `;
@@ -35,7 +35,7 @@ export const SubHeaderContainer = styled.div`
 
 // extended
 export const Text = styled(SubHeaderText)`
-  color: #001219;
+  color: ${(props) => props.color};
 `;
 
 export const SubHeaderDecoration = styled(SubHeaderText)`

@@ -8,7 +8,7 @@ interface Props {
   subHeader: string;
   img: string;
   description: string;
-  technologies: string;
+  technologies: string[];
 }
 
 interface StyledProps {
@@ -39,14 +39,20 @@ const ProjectDescription = styled.p<StyledProps>`
   font-family: 'IBM Plex Mono', monospace;
   height: fit-content;
   background-color: #005f73;
+  padding: 15px;
   margin-bottom: 20px;
+  box-shadow: 2px 5px 25px -15px black;
   ${(props) =>
-    props.isHovering ? 'margin-left: -25%;' : 'margin-right: -25%;'}
+    props.isHovering
+      ? 'margin-left: -27%; margin-right: 2%;'
+      : 'margin-right: -25%;'}
   z-index: 2;
   transition: margin 0.5s ease-out;
 `;
 
-const Technologies = styled.p`
+const Technologies = styled.ul`
+  display: flex;
+  flex-flow: column wrap;
   font-family: 'IBM Plex Mono', monospace;
   height: 20%;
 `;
@@ -56,15 +62,9 @@ const ProjectPreviewWrapper = styled(ImageWrapper)<StyledProps>`
   max-width: 500px;
   min-width: 40%;
   background-color: grey;
-  border-radius: 55px;
+  /* border-radius: 55px; */
   ${({ isHovering }) => !isHovering && 'filter: grayscale(100%) invert(75%);'}
   transition: 0.5s;
-`;
-
-const ProjectPreview = styled.img`
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
 `;
 
 function ProjectListItem({
@@ -82,7 +82,11 @@ function ProjectListItem({
         <ProjectDescription isHovering={isHovering}>
           {description}
         </ProjectDescription>
-        <Technologies>{technologies}</Technologies>
+        <Technologies>
+          {technologies.map((technology, idx) => (
+            <li key={idx}>-{technology}</li>
+          ))}
+        </Technologies>
       </ProjectDetailsContainer>
 
       <ProjectPreviewWrapper

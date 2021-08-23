@@ -1,8 +1,7 @@
 import React, { ReactElement, useState, useEffect } from 'react';
 import styled from 'styled-components';
-import axios from 'axios';
 import ProjectListItem from './ProjectListItem';
-import notejs from '../../assets/projectDemo/notejs.gif';
+import projects, { Project } from './projectInfo';
 
 interface Props {}
 
@@ -29,18 +28,19 @@ function ProjectList({}: Props): ReactElement {
   // }, []);
 
   return (
-    <ProjectListItemWrapper>
-      <ProjectListItem
-        subHeader={'Note-JS'}
-        description={
-          'A gravity based, geometric musical playground where collisions of various shapes create different notes and sounds based on the shape of the bodies. Heavily inspired by music making techniques of modular synthesis.'
-        }
-        technologies={'React NodeJS'}
-        img={
-          'https://github.com/erikeh/erikeh-demo-assets/blob/master/noteJS-demo_jul29.gif?raw=true'
-        }
-      />
-    </ProjectListItemWrapper>
+    <>
+      {(projects as Project[]).map((project, idx) => (
+        <ProjectListItemWrapper key={idx}>
+          <ProjectListItem
+            key={idx}
+            subHeader={project.name}
+            description={project.description}
+            technologies={project.technologies}
+            img={project.img}
+          />
+        </ProjectListItemWrapper>
+      ))}
+    </>
   );
 }
 

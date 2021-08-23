@@ -6,6 +6,16 @@ import styled from 'styled-components';
 const ProjectsContainer = styled.div`
   width: 100%;
   height: 1400px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  /* align-items: center; */
+`;
+
+const SubHeaderContentAlignmentContainer = styled.div`
+  width: 60%;
+  display: flex;
+  flex-flow: column nowrap;
 `;
 
 interface ProjectsProps {
@@ -15,8 +25,10 @@ interface ProjectsProps {
 function Projects({}: ProjectsProps): ReactElement {
   return (
     <ProjectsContainer>
-      <SubHeader subHeader={'Projects'} color={'#f1faee'} />
-      <ProjectList />
+      <SubHeaderContentAlignmentContainer>
+        <SubHeader subHeader={'Projects'} color={'#f1faee'} />
+        <ProjectList />
+      </SubHeaderContentAlignmentContainer>
     </ProjectsContainer>
   )
 }

@@ -78,7 +78,7 @@ function LandingPage(): ReactElement {
               }}
               transition={{
                 duration: 0.5,
-                delay: 0.2,
+                delay: 1,
               }}
             >
               Show me your work

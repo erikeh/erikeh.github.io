@@ -162,7 +162,7 @@ export const introItem = {
   hidden: {
     opacity: 0,
     transformOrigin: 'top left',
-    rotate: 20,
+    rotate: 25,
   },
   show: {
     rotate: 0,
@@ -173,7 +173,7 @@ export const introItem = {
       },
       type: 'tween',
       ease: 'easeOut',
-      duration: 2,
+      duration: 0.5,
     },
   },
 };

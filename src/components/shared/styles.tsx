@@ -12,7 +12,7 @@ export const SectionHeader = styled.h2`
 `;
 
 export const SubHeaderText = styled.h3`
-  font-size: 4em;
+  font-size: clamp(1em, 4vw, 4em);
   font-weight: 500;
 `;
 

@@ -44,10 +44,10 @@ const ProjectDescription = styled.p<StyledProps>`
   box-shadow: 2px 5px 25px -15px black;
   ${(props) =>
     props.isHovering
-      ? 'margin-left: -27%; margin-right: 2%;'
+      ? 'margin-left: -26%; margin-right: 1%;'
       : 'margin-right: -25%;'}
   z-index: 2;
-  transition: margin 0.5s ease-out;
+  transition: margin 0.3s ease-out;
 `;
 
 const Technologies = styled.ul`
@@ -66,6 +66,7 @@ const ProjectPreviewWrapper = styled(ImageWrapper)<StyledProps>`
   ${({ isHovering }) => !isHovering && 'filter: grayscale(100%) invert(75%);'}
   transition: 0.5s;
 `;
+
 
 function ProjectListItem({
   subHeader,

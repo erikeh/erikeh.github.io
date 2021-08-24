@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import React, { ReactElement, Ref } from 'react';
 import ProjectList from './ProjectList';
 import { SubHeader } from '../shared/components';
 import styled from 'styled-components';
@@ -10,6 +10,7 @@ const ProjectsContainer = styled.div`
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
+  padding-bottom: 80px;
   /* border-top: 1px dotted white; */
   /* align-items: center; */
 `;
@@ -25,18 +26,22 @@ const SubHeaderContentAlignmentContainer = styled.div`
 `;
 
 interface ProjectsProps {
-
+  reference: Ref<HTMLDivElement>;
 }
 
-function Projects({}: ProjectsProps): ReactElement {
+function Projects({ reference }: ProjectsProps): ReactElement {
   return (
-    <ProjectsContainer>
+    <ProjectsContainer ref={reference}>
       <SubHeaderContentAlignmentContainer>
-        <SubHeader subHeader={'<Projects />'} color={'#423d88'} fontWeight={200}/>
+        <SubHeader
+          subHeader={'<Projects />'}
+          color={'#423d88'}
+          fontWeight={200}
+        />
         <ProjectList />
       </SubHeaderContentAlignmentContainer>
     </ProjectsContainer>
-  )
+  );
 }
 
 export default Projects;

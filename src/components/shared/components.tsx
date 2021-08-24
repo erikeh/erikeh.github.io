@@ -20,7 +20,9 @@ export const SubHeader = ({
   return (
     <AlignFlexStart>
       <SubHeaderContainer>
-        <Text color={color} fontWeight={fontWeight}>{subHeader}</Text>
+        <Text color={color} fontWeight={fontWeight}>
+          {subHeader}
+        </Text>
         <SubHeaderDecoration>-</SubHeaderDecoration>
       </SubHeaderContainer>
     </AlignFlexStart>

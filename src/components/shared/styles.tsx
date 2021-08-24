@@ -2,6 +2,11 @@ import * as React from 'react';
 
 import styled from 'styled-components';
 
+interface TextProps {
+  color: string;
+  fontWeight: number;
+}
+
 // HTML elements
 export const SectionHeader = styled.h2`
   display: flex;
@@ -14,6 +19,8 @@ export const SectionHeader = styled.h2`
 export const SubHeaderText = styled.h3`
   font-size: clamp(1em, 4vw, 4em);
   font-weight: 600;
+  display: flex;
+  flex-flow: row nowrap;
 `;
 
 export const ImageWrapper = styled.div`
@@ -34,7 +41,7 @@ export const SubHeaderContainer = styled.div`
 `;
 
 // extended
-export const Text = styled(SubHeaderText)`
+export const Text = styled(SubHeaderText)<TextProps>`
   color: ${(props) => props.color};
   font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : 600)};
 `;

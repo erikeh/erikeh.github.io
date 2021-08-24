@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useRef } from 'react';
 import LandingPage from './LandingPage';
 import About from './About';
 import Projects from './Projects';
@@ -12,12 +13,14 @@ const AppDiv = styled.div`
 `;
 
 const App = () => {
+  const projectsRef = useRef(null);
+
   return (
     <AppDiv>
       <GlobalStyle />
       {/* <NavBarElement /> */}
-      <LandingPage />
-      <Projects />
+      <LandingPage reference={projectsRef}/>
+      <Projects reference={projectsRef} />
       <About />
     </AppDiv>
   );

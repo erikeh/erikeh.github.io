@@ -85,7 +85,7 @@ function IntroText(): ReactElement {
     h: hControl,
   };
 
-  const animateName = (name) =>
+  const animateName = (name: string) =>
     name.split('').map((char, i) => (
       <ColoredHighlightedCharacter
         key={i}

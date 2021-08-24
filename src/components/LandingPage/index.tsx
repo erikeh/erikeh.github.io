@@ -7,6 +7,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 import screen from '../../media/mediaQueries';
 
+interface Props {
+  reference: React.RefObject<HTMLDivElement>;
+}
+
 const LandingPageContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -20,6 +24,7 @@ const TextButtonContainer = styled.div`
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
+  padding-top: 10%;
   width: 60%;
   ${screen.small`
     width: 90%;
@@ -59,7 +64,12 @@ const ShowWorkButton = styled(motion.button)`
   `}
 `;
 
-function LandingPage(): ReactElement {
+function LandingPage({ reference }: Props): ReactElement {
+
+  const handleScrollToRef = () => {
+    reference.current.scrollIntoView({ behavior: 'smooth' });
+  }
+
   return (
     <LandingPageContainer>
       <Header />
@@ -80,6 +90,7 @@ function LandingPage(): ReactElement {
                 duration: 0.5,
                 delay: 1,
               }}
+              onClick={handleScrollToRef}
             >
               Show me your work
             </ShowWorkButton>

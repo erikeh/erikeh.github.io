@@ -43,7 +43,9 @@ const ProjectDetailsContainer = styled.div`
 const ProjectDescription = styled.p<StyledProps>`
   font-family: 'IBM Plex Mono', monospace;
   height: fit-content;
+  font-size: 0.9em;
   background-color: #005f73;
+  line-height: 20px;
   padding: 15px;
   margin-bottom: 20px;
   box-shadow: 2px 5px 25px -15px black;

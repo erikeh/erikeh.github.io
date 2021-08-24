@@ -13,7 +13,7 @@ export const SectionHeader = styled.h2`
 
 export const SubHeaderText = styled.h3`
   font-size: clamp(1em, 4vw, 4em);
-  font-weight: 500;
+  font-weight: 600;
 `;
 
 export const ImageWrapper = styled.div`
@@ -36,6 +36,7 @@ export const SubHeaderContainer = styled.div`
 // extended
 export const Text = styled(SubHeaderText)`
   color: ${(props) => props.color};
+  font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : 600)};
 `;
 
 export const SubHeaderDecoration = styled(SubHeaderText)`

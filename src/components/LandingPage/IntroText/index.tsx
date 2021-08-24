@@ -29,13 +29,13 @@ const OverFlowHider = styled.div`
 `;
 
 const IntroLine = styled(motion.h2)`
-  flex: 0 1 100%;
+  overflow: visible;
   color: #f1faee;
-  font-size: clamp(1rem, 8vw, 5rem);
+  font-size: clamp(1rem, 6.2vw, 5rem);
   font-weight: 600;
   cursor: default;
   ${screen.small`
-    font-size: clamp(0.5rem, 9vw, 5rem);
+    font-size: clamp(0.5rem, 7vw, 5rem);
     text-align: center;
   `}
 
@@ -103,7 +103,7 @@ function IntroText(): ReactElement {
     <IntroContainer variants={intro} initial="hidden" animate="show">
       <OverFlowHider>
         <IntroLine variants={introItem}>
-          {`My name is`} {animateName(firstName)} {animateName(lastName)}
+          {`My name is ` + ' '} {animateName(firstName)} {animateName(lastName)}
         </IntroLine>
       </OverFlowHider>
       <OverFlowHider>

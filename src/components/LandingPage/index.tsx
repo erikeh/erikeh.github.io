@@ -20,7 +20,7 @@ const TextButtonContainer = styled.div`
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  width: 80%;
+  width: 60%;
   ${screen.small`
     width: 90%;
   `}

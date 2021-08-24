@@ -2,6 +2,7 @@ import React, { ReactElement } from 'react'
 import ProjectList from './ProjectList';
 import { SubHeader } from '../shared/components';
 import styled from 'styled-components';
+import screen from '../../media/mediaQueries';
 
 const ProjectsContainer = styled.div`
   width: 100%;
@@ -9,6 +10,7 @@ const ProjectsContainer = styled.div`
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
+  /* border-top: 1px dotted white; */
   /* align-items: center; */
 `;
 
@@ -16,6 +18,10 @@ const SubHeaderContentAlignmentContainer = styled.div`
   width: 60%;
   display: flex;
   flex-flow: column nowrap;
+  /* align-items: center; */
+  ${screen.extraLarge`
+    width: 80%;
+  `}
 `;
 
 interface ProjectsProps {
@@ -26,7 +32,7 @@ function Projects({}: ProjectsProps): ReactElement {
   return (
     <ProjectsContainer>
       <SubHeaderContentAlignmentContainer>
-        <SubHeader subHeader={'Projects'} color={'#f1faee'} />
+        <SubHeader subHeader={'<Projects />'} color={'#423d88'} fontWeight={200}/>
         <ProjectList />
       </SubHeaderContentAlignmentContainer>
     </ProjectsContainer>

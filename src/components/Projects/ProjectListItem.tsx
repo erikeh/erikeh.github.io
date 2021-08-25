@@ -89,13 +89,10 @@ const ProjectPreviewWrapper = styled.a<StyledProps>`
   flex: 0 1 60%;
   max-width: 500px;
   min-width: 30%;
-  ${({ isHovering, isActiveMobile }) =>
-    !isHovering && !isActiveMobile && 'filter: grayscale(100%) invert(75%);'}
+  ${({ isHovering }) => !isHovering && 'filter: grayscale(100%) invert(75%);'}
   transition: 0.5s;
   ${screen.medium`
     order: 3;
-    ${({ isActiveMobile }) =>
-      !isActiveMobile && 'filter: grayscale(100%) invert(75%);'}
   `}
 `;
 
@@ -176,17 +173,11 @@ function ProjectListItem({
           loop
           muted
           playsInline
-          onMouseEnter={(e) => e.target.play()}
-          onMouseLeave={(e) => e.target.pause()}
+          onMouseEnter={(e) => (e.target as HTMLVideoElement).play()}
+          onMouseLeave={(e) => (e.target as HTMLVideoElement).pause()}
         >
           <source src={src} type="video/mp4" />
         </ProjectPreview>
-        {/* <SizedFreezeFrame
-          src={src}
-          ref={freezeFrameRef}
-          onStart={() => setIsActiveMobile(true)}
-          onStop={() => setIsActiveMobile(false)}
-        /> */}
       </ProjectPreviewWrapper>
     </ProjectListItemContainer>
   );

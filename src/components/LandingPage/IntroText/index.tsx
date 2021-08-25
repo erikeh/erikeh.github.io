@@ -35,7 +35,7 @@ const IntroLine = styled(motion.h2)`
   font-weight: 600;
   cursor: default;
   ${screen.small`
-    font-size: clamp(0.5rem, 7vw, 5rem);
+    font-size: clamp(0.5rem, 9.5vw, 6rem);
     text-align: center;
   `}
 

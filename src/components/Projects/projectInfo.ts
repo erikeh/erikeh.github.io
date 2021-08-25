@@ -3,6 +3,8 @@ export interface Project {
   description: string;
   technologies: string[];
   img: string;
+  link?: string;
+  demo?: string;
 }
 
 const project1: Project = {
@@ -19,6 +21,8 @@ const project1: Project = {
     'AWS',
   ],
   img: 'https://github.com/erikeh/erikeh-demo-assets/blob/master/Group-foodie_demo_aug23.gif?raw=true',
+  link: 'https://github.com/erikeh/note-js-musical-playground',
+  demo: 'http://18.144.8.57/',
 };
 
 const project2: Project = {
@@ -33,6 +37,7 @@ const project2: Project = {
     'Knex',
   ],
   img: 'https://github.com/erikeh/erikeh-demo-assets/blob/master/Group-foodie_demo_aug24.gif?raw=true',
+  link: 'https://github.com/erikeh/group-foodie',
 };
 
 const project3: Project = {
@@ -50,6 +55,7 @@ const project3: Project = {
     'ECS',
   ],
   img: 'https://github.com/erikeh/erikeh-demo-assets/blob/master/FEC_demo_aug24.gif?raw=true',
+  link: 'https://github.com/erikeh/atelier-full-stack-product-page',
 }
 
 export default [project1, project2, project3];

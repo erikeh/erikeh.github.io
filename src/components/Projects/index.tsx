@@ -6,7 +6,7 @@ import screen from '../../media/mediaQueries';
 
 const ProjectsContainer = styled.div`
   width: 100%;
-  height: 1400px;
+  height: 1500px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;

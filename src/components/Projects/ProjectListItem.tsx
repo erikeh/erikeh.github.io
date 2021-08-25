@@ -10,6 +10,8 @@ interface Props {
   img: string;
   description: string;
   technologies: string[];
+  link: string;
+  demo?: string;
 }
 
 interface StyledProps {
@@ -72,13 +74,10 @@ const Technologies = styled.ul`
   /* flex: 0 1 40px; */
 `;
 
-const ProjectPreviewWrapper = styled(ImageWrapper)<StyledProps>`
-  /* width: 100%; */
+const ProjectPreviewWrapper = styled.a<StyledProps>`
   flex: 0 1 60%;
   max-width: 500px;
   min-width: 30%;
-  /* height: 100%; */
-  /* border-radius: 55px; */
   ${({ isHovering, isActiveMobile }) =>
     !isHovering && !isActiveMobile && 'filter: grayscale(100%) invert(75%);'}
   transition: 0.5s;
@@ -93,6 +92,8 @@ function ProjectListItem({
   description,
   technologies,
   img,
+  link,
+  demo,
 }: Props): ReactElement {
   const [isHovering, setIsHovering] = useState(false);
   const [isActiveMobile, setIsActiveMobile] = useState(false);
@@ -107,7 +108,15 @@ function ProjectListItem({
           isHovering={isHovering}
           isActiveMobile={isActiveMobile}
         >
-          {description}
+          {description}{' '}
+          {demo && (
+            <>
+              <br />
+              <a href={demo} target="_blank" rel="noopener noreferrer">
+                Try the demo
+              </a>
+            </>
+          )}
         </ProjectDescription>
         <Technologies>
           {technologies.map((technology, idx) => (
@@ -121,14 +130,14 @@ function ProjectListItem({
         isActiveMobile={isActiveMobile}
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
       >
         {/* <ProjectPreview src={img} /> */}
         <ReactFreezeFrame
           src={img}
           ref={freezeFrameRef}
-          options={{
-            // overlay: true,
-          }}
           onStart={() => setIsActiveMobile(true)}
           onStop={() => setIsActiveMobile(false)}
         />

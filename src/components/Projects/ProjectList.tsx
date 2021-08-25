@@ -2,6 +2,7 @@ import React, { ReactElement, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import ProjectListItem from './ProjectListItem';
 import projects, { Project } from './projectInfo';
+import screen from '../../media/mediaQueries';
 
 interface Props {}
 
@@ -11,6 +12,9 @@ const ProjectListItemWrapper = styled.div`
   flex: 0 1 auto;
   margin-top: 50px;
   height: 500px;
+  ${screen.medium`
+    margin-bottom: 130px;
+  `}
 `;
 
 function ProjectList({}: Props): ReactElement {
@@ -25,7 +29,7 @@ function ProjectList({}: Props): ReactElement {
             technologies={project.technologies}
             img={project.img}
             link={project.link || ''}
-            demo={project.demo}
+            demo={project.demo || null}
           />
         </ProjectListItemWrapper>
       ))}

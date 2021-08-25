@@ -173,7 +173,7 @@ export const introItem = {
       },
       type: 'tween',
       ease: 'easeOut',
-      duration: 0.5,
+      duration: 0.8,
     },
   },
 };

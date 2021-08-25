@@ -1,4 +1,5 @@
 import React, { ReactElement } from 'react';
+import { SubHeader } from '../shared/components';
 import profilePic from '../../assets/img/profile.jpg';
 import reactLogo from '../../assets/img/logos/react.svg';
 import javascriptLogo from '../../assets/img/logos/javascript.svg';
@@ -14,7 +15,9 @@ interface AboutProps {}
 function About({}: AboutProps): ReactElement {
   return (
     <s.AboutContainer>
-      <s.AboutHeader></s.AboutHeader>
+      <s.SubHeaderAlignmentWrapper>
+        <SubHeader subHeader={'<About />'} color={'#423d88'} fontWeight={200} />
+      </s.SubHeaderAlignmentWrapper>
       <s.ProfileAndBio>
         <s.ProfilePictureWrapper>
           <s.ProfilePicture src={profilePic} />

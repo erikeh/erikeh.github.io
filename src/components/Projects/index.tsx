@@ -10,9 +10,12 @@ const ProjectsContainer = styled.div`
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
-  padding-bottom: 80px;
+  margin-bottom: 200px;
   /* border-top: 1px dotted white; */
   /* align-items: center; */
+  ${screen.medium`
+    height: 2200px;
+  `}
 `;
 
 const SubHeaderContentAlignmentContainer = styled.div`

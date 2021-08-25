@@ -33,6 +33,10 @@ const ProjectListItemContainer = styled.div`
   `}
 `;
 
+const OrderedSubHeader = styled(SubHeader)`
+  order: 0;
+`;
+
 const ProjectDetailsContainer = styled.div`
   display: flex;
   flex: 0 1 55%;
@@ -40,6 +44,9 @@ const ProjectDetailsContainer = styled.div`
   justify-content: center;
   height: 100%;
   width: 100%;
+  ${screen.medium`
+    order: 2;
+  `}
 `;
 
 const ProjectDescription = styled.p<StyledProps>`
@@ -59,10 +66,10 @@ const ProjectDescription = styled.p<StyledProps>`
   transition: margin 0.3s ease-out;
   ${screen.medium`
     margin 0;
-    ${(props) =>
-      props.isHovering
-        ? 'margin-bottom: 0%; margin-right: 0%;'
-        : 'margin-bottom: -25%;'}
+    order: 2;
+    ${(props) => props.isHovering && 'margin 0;'}
+        // ? 'margin-bottom: 0%; margin-right: 0%;'
+        // : 'margin-bottom: -25%;'}
   `}
 `;
 
@@ -72,6 +79,10 @@ const Technologies = styled.ul`
   font-family: 'IBM Plex Mono', monospace;
   height: 50px;
   /* flex: 0 1 40px; */
+  ${screen.medium`
+    order: 3;
+    margin 2% 0;
+  `}
 `;
 
 const ProjectPreviewWrapper = styled.a<StyledProps>`
@@ -82,6 +93,7 @@ const ProjectPreviewWrapper = styled.a<StyledProps>`
     !isHovering && !isActiveMobile && 'filter: grayscale(100%) invert(75%);'}
   transition: 0.5s;
   ${screen.medium`
+    order: 3;
     ${({ isActiveMobile }) =>
       !isActiveMobile && 'filter: grayscale(100%) invert(75%);'}
   `}
@@ -103,7 +115,7 @@ function ProjectListItem({
   return (
     <ProjectListItemContainer>
       <ProjectDetailsContainer>
-        <SubHeader subHeader={subHeader} fontWeight={600} />
+        <OrderedSubHeader subHeader={subHeader} fontWeight={600} />
         <ProjectDescription
           isHovering={isHovering}
           isActiveMobile={isActiveMobile}

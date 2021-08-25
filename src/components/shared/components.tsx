@@ -23,7 +23,7 @@ export const SubHeader = ({
         <Text color={color} fontWeight={fontWeight}>
           {subHeader}
         </Text>
-        <SubHeaderDecoration>-</SubHeaderDecoration>
+        <SubHeaderDecoration></SubHeaderDecoration>
       </SubHeaderContainer>
     </AlignFlexStart>
   );

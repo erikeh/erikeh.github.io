@@ -88,7 +88,7 @@ function LandingPage({ reference }: Props): ReactElement {
               }}
               transition={{
                 duration: 0.5,
-                delay: 1,
+                delay: 1.3,
               }}
               onClick={handleScrollToRef}
             >

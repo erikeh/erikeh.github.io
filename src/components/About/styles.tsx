@@ -1,11 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import screen from '../../media/mediaQueries';
-import {
-  SectionHeader,
-  SubHeaderText,
-  ImageWrapper,
-} from '../shared/styles';
+import { SectionHeader, SubHeaderText, ImageWrapper } from '../shared/styles';
 import { SubHeader } from '../shared/components';
 
 // individual HTML elements
@@ -39,7 +35,6 @@ export const AboutHeader = styled(SectionHeader)`
 
 export const ProfileAndBio = styled.div`
   display: flex;
-  /* flex: 0 1 60%; */
   width: 60%;
   max-width: 900px;
   flex-direction: row;
@@ -91,6 +86,9 @@ export const Bio = styled.p`
   line-height: 18px;
   color: #001219;
   padding-bottom: 40px;
+  ${screen.medium`
+    text-align: center;
+  `}
 `;
 
 export const Logos = styled.div`
@@ -99,69 +97,29 @@ export const Logos = styled.div`
   align-items: center;
 `;
 
-// Sub Header elements
-const AlignFlexStart = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-`;
-
-const SubHeaderContainer = styled.div`
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-`;
-
-const Text = styled(SubHeaderText)`
-  color: #001219;
-`;
-
-const SubHeaderDecoration = styled(SubHeaderText)`
-  color: #001219;
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: flex-end;
-  justify-content: center;
-  height: 40px;
-`;
-
-interface AboutSubHeaderProps {
-  subHeader: string;
-}
-
-export const AboutSubHeader = ({
-  subHeader,
-}: AboutSubHeaderProps): React.ReactElement => {
-  return (
-    <AlignFlexStart>
-      <SubHeaderContainer>
-        <Text>{subHeader}</Text>
-        <SubHeaderDecoration>-</SubHeaderDecoration>
-      </SubHeaderContainer>
-    </AlignFlexStart>
-  );
-};
-
 // Logo Image Elements
 const LogoContainer = styled(ImageWrapper)`
   display: flex;
   width: 4vw;
   min-width: 2.5rem;
+  max-width: 4rem;
   margin-right: 20px;
 `;
 
 const TechStackLogo = styled.img`
   width: 100%;
+  height: auto;
 `;
 
 interface LogoImageProps {
   img: string;
+  alt: string;
 }
 
-export const LogoImage = ({ img }: LogoImageProps): React.ReactElement => {
+export const LogoImage = ({ img, alt }: LogoImageProps): React.ReactElement => {
   return (
     <LogoContainer>
-      <TechStackLogo src={img} />
+      <TechStackLogo src={img} alt={alt} />
     </LogoContainer>
   );
 };

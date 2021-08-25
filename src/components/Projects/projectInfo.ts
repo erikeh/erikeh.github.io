@@ -1,8 +1,12 @@
+import fecDemo from '../../assets/projectDemo/FEC_Demo.mp4';
+import noteJSDemo from '../../assets/projectDemo/Note-JS_Demo.mp4';
+import groupFoodieDemo from '../../assets/projectDemo/Group-Foodie_Demo.mp4';
+
 export interface Project {
   name: string;
   description: string;
   technologies: string[];
-  img: string;
+  src: string;
   link?: string;
   demo?: string;
 }
@@ -20,7 +24,7 @@ const project1: Project = {
     'Docker',
     'AWS',
   ],
-  img: 'https://github.com/erikeh/erikeh-demo-assets/blob/master/Group-foodie_demo_aug23.gif?raw=true',
+  src: noteJSDemo,
   link: 'https://github.com/erikeh/note-js-musical-playground',
   demo: 'http://18.144.8.57/',
 };
@@ -36,7 +40,7 @@ const project2: Project = {
     'PostgreSQL',
     'Knex',
   ],
-  img: 'https://github.com/erikeh/erikeh-demo-assets/blob/master/Group-foodie_demo_aug24.gif?raw=true',
+  src: groupFoodieDemo,
   link: 'https://github.com/erikeh/group-foodie',
 };
 
@@ -54,8 +58,9 @@ const project3: Project = {
     'AWS',
     'ECS',
   ],
-  img: 'https://github.com/erikeh/erikeh-demo-assets/blob/master/FEC_demo_aug24.gif?raw=true',
+  src: fecDemo,
   link: 'https://github.com/erikeh/atelier-full-stack-product-page',
-}
+  // link: FECDemo,
+};
 
 export default [project1, project2, project3];

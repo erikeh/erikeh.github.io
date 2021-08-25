@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import { css, DefaultTheme, ThemedCssFunction } from 'styled-components';
 
 const sizes = {
   small: 500,
@@ -14,4 +14,4 @@ export default Object.keys(sizes).reduce((acc, label) => {
     }
   `;
   return acc;
-}, {});
+}, {} as ThemedCssFunction<DefaultTheme>);

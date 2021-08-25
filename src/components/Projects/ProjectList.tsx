@@ -27,7 +27,7 @@ function ProjectList({}: Props): ReactElement {
             subHeader={project.name}
             description={project.description}
             technologies={project.technologies}
-            img={project.img}
+            src={project.src}
             link={project.link || ''}
             demo={project.demo || null}
           />

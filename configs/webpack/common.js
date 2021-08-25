@@ -29,6 +29,10 @@ module.exports = {
           "image-webpack-loader?bypassOnDebug&optipng.optimizationLevel=7&gifsicle.interlaced=false",
         ],
       },
+      {
+        test: /\.mp4$/,
+        use: 'file-loader?name=videos/[name].[ext]',
+      },
     ],
   },
   plugins: [new HtmlWebpackPlugin({ template: "index.html.ejs" })],

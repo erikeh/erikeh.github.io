@@ -55,9 +55,6 @@ const ColoredHighlightedCharacter = styled(motion.span)`
 `;
 
 function IntroText(): ReactElement {
-  const firstName = `Erik`;
-  const lastName = 'Oh';
-
   // store variants in obj to assign a variant to each character of my name
   const variants = {
     E: eVariant,
@@ -103,7 +100,7 @@ function IntroText(): ReactElement {
     <IntroContainer variants={intro} initial="hidden" animate="show">
       <OverFlowHider>
         <IntroLine variants={introItem}>
-          {`My name is ` + ' '} {animateName(firstName)} {animateName(lastName)}
+          {`My name is ` + ' '} {animateName('Erik')} {animateName('Oh')}
         </IntroLine>
       </OverFlowHider>
       <OverFlowHider>

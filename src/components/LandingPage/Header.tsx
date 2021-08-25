@@ -1,5 +1,5 @@
-import React, { ReactElement } from "react";
-import styled from "styled-components";
+import React, { ReactElement } from 'react';
+import styled from 'styled-components';
 
 interface Props {}
 
@@ -25,8 +25,15 @@ function Header({}: Props): ReactElement {
   return (
     <HeaderContainer>
       <LinksContainer>
-        <Link href="https://github.com/erikeh">github</Link>
-        <Link href="https://www.linkedin.com/in/yoon-hwan-erik-oh/">LinkedIn</Link>
+        <Link href="https://github.com/erikeh" aria-label="github">
+          github
+        </Link>
+        <Link
+          href="https://www.linkedin.com/in/yoon-hwan-erik-oh/"
+          aria-label="LinkedIn"
+        >
+          LinkedIn
+        </Link>
       </LinksContainer>
     </HeaderContainer>
   );

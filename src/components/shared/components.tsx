@@ -10,12 +10,14 @@ interface SubHeaderProps {
   subHeader: string;
   color?: string;
   fontWeight?: number;
+  textDecoration?: string;
 }
 
 export const SubHeader = ({
   subHeader,
   color,
   fontWeight,
+  textDecoration,
 }: SubHeaderProps): React.ReactElement => {
   return (
     <AlignFlexStart>
@@ -23,7 +25,7 @@ export const SubHeader = ({
         <Text color={color} fontWeight={fontWeight}>
           {subHeader}
         </Text>
-        <SubHeaderDecoration></SubHeaderDecoration>
+        <SubHeaderDecoration>{textDecoration}</SubHeaderDecoration>
       </SubHeaderContainer>
     </AlignFlexStart>
   );

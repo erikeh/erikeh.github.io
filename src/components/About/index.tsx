@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import { SubHeader } from '../shared/components';
-import profilePic from '../../assets/img/profile.jpg';
+import profilePic from '../../assets/img/profile_300x400.jpg';
 import reactLogo from '../../assets/img/logos/react.svg';
 import javascriptLogo from '../../assets/img/logos/javascript.svg';
 import nodeLogo from '../../assets/img/logos/nodejs-icon.svg';
@@ -20,24 +20,39 @@ function About({}: AboutProps): ReactElement {
       </s.SubHeaderAlignmentWrapper>
       <s.ProfileAndBio>
         <s.ProfilePictureWrapper>
-          <s.ProfilePicture src={profilePic} />
+          <s.ProfilePicture
+            src={profilePic}
+            alt="Erik with dog in lap"
+            width="300"
+            height="400"
+          />
         </s.ProfilePictureWrapper>
         <s.DetailsContainer>
-          <s.AboutSubHeader subHeader={`Who's Erik?`} />
+          <SubHeader
+            subHeader={`Who's Erik?`}
+            color={'#000000'}
+            fontWeight={600}
+            textDecoration={'-'}
+          />
           <s.Bio>
             {`I'm a full-stack developer living in Los Angeles, LA. I'm passionate
             about great UX. But I'm equally passionate about writing organized,
             modularized and thoughtful code.`}
           </s.Bio>
-          <s.AboutSubHeader subHeader={`Technologies`} />
+          <SubHeader
+            subHeader={`Technologies`}
+            color={'#000000'}
+            fontWeight={600}
+            textDecoration={'-'}
+          />
           <s.Logos>
-            <s.LogoImage img={reactLogo} />
-            <s.LogoImage img={javascriptLogo} />
-            <s.LogoImage img={nodeLogo} />
-            <s.LogoImage img={typescriptLogo} />
-            <s.LogoImage img={htmlLogo} />
-            <s.LogoImage img={cssLogo} />
-            <s.LogoImage img={reduxLogo} />
+            <s.LogoImage img={reactLogo} alt={'React Logo'} />
+            <s.LogoImage img={javascriptLogo} alt={'JavaScript Logo'} />
+            <s.LogoImage img={nodeLogo} alt={'Node JS Logo'} />
+            <s.LogoImage img={typescriptLogo} alt={'TypeScript Logo'} />
+            <s.LogoImage img={htmlLogo} alt={'HTML5 Logo'} />
+            <s.LogoImage img={cssLogo} alt={'CSS3 Logo'} />
+            <s.LogoImage img={reduxLogo} alt={'Redux Logo'} />
           </s.Logos>
         </s.DetailsContainer>
       </s.ProfileAndBio>

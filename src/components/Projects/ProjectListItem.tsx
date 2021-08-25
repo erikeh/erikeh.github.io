@@ -7,7 +7,7 @@ import screen from '../../media/mediaQueries';
 
 interface Props {
   subHeader: string;
-  img: string;
+  src: string;
   description: string;
   technologies: string[];
   link: string;
@@ -99,11 +99,31 @@ const ProjectPreviewWrapper = styled.a<StyledProps>`
   `}
 `;
 
+const ProjectPreview = styled.video`
+  width: 100%;
+  min-width: 30vw;
+`;
+
+const DemoLink = styled.a`
+  display: inline-block;
+  color: #000dc9;
+  /* text-decoration: none; */
+  &:hover {
+    color: #259ac8;
+    transform: scaleX(1);
+  }
+`;
+
+const SizedFreezeFrame = styled(ReactFreezeFrame)`
+  max-width: 100%;
+  max-height: 100%;
+`;
+
 function ProjectListItem({
   subHeader,
   description,
   technologies,
-  img,
+  src,
   link,
   demo,
 }: Props): ReactElement {
@@ -124,9 +144,14 @@ function ProjectListItem({
           {demo && (
             <>
               <br />
-              <a href={demo} target="_blank" rel="noopener noreferrer">
+              <DemoLink
+                href={demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Demo Link"
+              >
                 Try the demo
-              </a>
+              </DemoLink>
             </>
           )}
         </ProjectDescription>
@@ -145,14 +170,23 @@ function ProjectListItem({
         href={link}
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Github Page to project"
       >
-        {/* <ProjectPreview src={img} /> */}
-        <ReactFreezeFrame
-          src={img}
+        <ProjectPreview
+          loop
+          muted
+          playsInline
+          onMouseEnter={(e) => e.target.play()}
+          onMouseLeave={(e) => e.target.pause()}
+        >
+          <source src={src} type="video/mp4" />
+        </ProjectPreview>
+        {/* <SizedFreezeFrame
+          src={src}
           ref={freezeFrameRef}
           onStart={() => setIsActiveMobile(true)}
           onStop={() => setIsActiveMobile(false)}
-        />
+        /> */}
       </ProjectPreviewWrapper>
     </ProjectListItemContainer>
   );

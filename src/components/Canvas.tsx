@@ -6,7 +6,7 @@ const AbsoluteContainer = styled.div`
   z-index: 5;
 `;
 
-/* Mouse trail adapted from a jQuery Codepen by Bryan C https://codepen.io/bryjch/pen/QEoXwA */
+/* this mouse trailing feature is currently unused by the site itself, but may implement in the future once I can get the performance a little better */
 
 class Point {
   constructor(x, y) {

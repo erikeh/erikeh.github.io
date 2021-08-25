@@ -31,7 +31,7 @@ const TextButtonContainer = styled.div`
   `}
 `;
 
-const ButtonContainer = styled.div`
+const ButtonWrapper = styled(motion.div)`
   display: flex;
   flex-direction: row;
   flex: 0 1 auto;
@@ -48,11 +48,10 @@ const ShowWorkButton = styled(motion.button)`
   font-weight: 100;
   background-color: #005f73;
   color: #f1faee;
-  border-radius: 40px;
+  border-radius: 4px;
   border: none;
   width: 170px;
   height: 45px;
-  /* margin-left: 15%; */
   margin-top: 50px;
   padding: 8px;
   ${screen.small`
@@ -65,10 +64,9 @@ const ShowWorkButton = styled(motion.button)`
 `;
 
 function LandingPage({ reference }: Props): ReactElement {
-
   const handleScrollToRef = () => {
     reference.current.scrollIntoView({ behavior: 'smooth' });
-  }
+  };
 
   return (
     <LandingPageContainer>
@@ -76,25 +74,36 @@ function LandingPage({ reference }: Props): ReactElement {
       <AnimatePresence>
         <TextButtonContainer>
           <IntroText />
-          <ButtonContainer>
+          <ButtonWrapper
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 0.5,
+              delay: 1.3,
+            }}
+          >
             <ShowWorkButton
-              initial={{
-                opacity: 0,
-                y: 20,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
               transition={{
-                duration: 0.5,
-                delay: 1.3,
+                duration: 0.15,
+              }}
+              whileHover={{
+                backgroundColor: '#0c8ea9',
+                transition: {
+                  duration: 0.15,
+                  type: 'tween',
+                },
               }}
               onClick={handleScrollToRef}
             >
               Show me your work
             </ShowWorkButton>
-          </ButtonContainer>
+          </ButtonWrapper>
         </TextButtonContainer>
       </AnimatePresence>
     </LandingPageContainer>

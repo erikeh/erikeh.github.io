@@ -114,7 +114,6 @@ export const oVariant = {
   hover: {
     backgroundImage: `url(${stingrays})`,
     backgroundPosition: `300% 300%`,
-    // transformOrigin: 'center',
     backgroundSize: '300%',
     transition: {
       type: 'tween',
@@ -145,7 +144,9 @@ export const hVariant = {
   },
 };
 
-// variants for intro text animation
+/** variants for intro text animation
+ */
+
 export const intro = {
   hidden: {
     opacity: 1,

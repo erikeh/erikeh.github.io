@@ -7,7 +7,7 @@ import screen from '../../media/mediaQueries';
 
 interface Props {
   subHeader: string;
-  img: string;
+  src: string;
   description: string;
   technologies: string[];
   link: string;
@@ -89,21 +89,38 @@ const ProjectPreviewWrapper = styled.a<StyledProps>`
   flex: 0 1 60%;
   max-width: 500px;
   min-width: 30%;
-  ${({ isHovering, isActiveMobile }) =>
-    !isHovering && !isActiveMobile && 'filter: grayscale(100%) invert(75%);'}
+  ${({ isHovering }) => !isHovering && 'filter: grayscale(100%) invert(75%);'}
   transition: 0.5s;
   ${screen.medium`
     order: 3;
-    ${({ isActiveMobile }) =>
-      !isActiveMobile && 'filter: grayscale(100%) invert(75%);'}
   `}
+`;
+
+const ProjectPreview = styled.video`
+  width: 100%;
+  min-width: 30vw;
+`;
+
+const DemoLink = styled.a`
+  display: inline-block;
+  color: #000dc9;
+  /* text-decoration: none; */
+  &:hover {
+    color: #259ac8;
+    transform: scaleX(1);
+  }
+`;
+
+const SizedFreezeFrame = styled(ReactFreezeFrame)`
+  max-width: 100%;
+  max-height: 100%;
 `;
 
 function ProjectListItem({
   subHeader,
   description,
   technologies,
-  img,
+  src,
   link,
   demo,
 }: Props): ReactElement {
@@ -124,9 +141,14 @@ function ProjectListItem({
           {demo && (
             <>
               <br />
-              <a href={demo} target="_blank" rel="noopener noreferrer">
+              <DemoLink
+                href={demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Demo Link"
+              >
                 Try the demo
-              </a>
+              </DemoLink>
             </>
           )}
         </ProjectDescription>
@@ -145,14 +167,17 @@ function ProjectListItem({
         href={link}
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Github Page to project"
       >
-        {/* <ProjectPreview src={img} /> */}
-        <ReactFreezeFrame
-          src={img}
-          ref={freezeFrameRef}
-          onStart={() => setIsActiveMobile(true)}
-          onStop={() => setIsActiveMobile(false)}
-        />
+        <ProjectPreview
+          loop
+          muted
+          playsInline
+          onMouseEnter={(e) => (e.target as HTMLVideoElement).play()}
+          onMouseLeave={(e) => (e.target as HTMLVideoElement).pause()}
+        >
+          <source src={src} type="video/mp4" />
+        </ProjectPreview>
       </ProjectPreviewWrapper>
     </ProjectListItemContainer>
   );

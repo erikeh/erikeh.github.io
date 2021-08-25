@@ -35,7 +35,7 @@ const IntroLine = styled(motion.h2)`
   font-weight: 600;
   cursor: default;
   ${screen.small`
-    font-size: clamp(0.5rem, 7vw, 5rem);
+    font-size: clamp(0.5rem, 9.5vw, 6rem);
     text-align: center;
   `}
 
@@ -55,9 +55,6 @@ const ColoredHighlightedCharacter = styled(motion.span)`
 `;
 
 function IntroText(): ReactElement {
-  const firstName = `Erik`;
-  const lastName = 'Oh';
-
   // store variants in obj to assign a variant to each character of my name
   const variants = {
     E: eVariant,
@@ -103,7 +100,7 @@ function IntroText(): ReactElement {
     <IntroContainer variants={intro} initial="hidden" animate="show">
       <OverFlowHider>
         <IntroLine variants={introItem}>
-          {`My name is ` + ' '} {animateName(firstName)} {animateName(lastName)}
+          {`My name is ` + ' '} {animateName('Erik')} {animateName('Oh')}
         </IntroLine>
       </OverFlowHider>
       <OverFlowHider>

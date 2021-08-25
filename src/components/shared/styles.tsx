@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 interface TextProps {
   color: string;
@@ -49,9 +49,10 @@ export const Text = styled(SubHeaderText)<TextProps>`
 export const SubHeaderDecoration = styled(SubHeaderText)`
   color: #001219;
   display: flex;
+  position: relative;
+  top: -1vw;
   flex-flow: row nowrap;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: center;
-  /* padding-right: 66%; */
   height: 40px;
 `;

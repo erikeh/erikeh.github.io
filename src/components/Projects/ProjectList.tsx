@@ -14,6 +14,9 @@ const ProjectListItemWrapper = styled.div`
   flex: 0 1 auto;
   margin-top: 50px;
   height: 500px;
+  -webkit-transition: 0.7s;
+  -moz-transition: 0.7s;
+  -o-transition: 0.7s;
   transition: 0.7s;
   transform: translateY(30px);
   ${screen.medium`

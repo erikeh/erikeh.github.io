@@ -62,6 +62,9 @@ const ProjectDescription = styled.p<StyledProps>`
       ? 'margin-left: -26%; margin-right: 1%;'
       : 'margin-right: -25%;'}
   z-index: 2;
+  -webkit-transition: margin 0.3s ease-out;
+  -moz-transition: margin 0.3s ease-out;
+  -o-transition: margin 0.3s ease-out;
   transition: margin 0.3s ease-out;
   ${screen.medium`
     margin 0;
@@ -89,6 +92,9 @@ const ProjectPreviewWrapper = styled.a<StyledProps>`
   max-width: 500px;
   min-width: 30%;
   ${({ isHovering }) => !isHovering && 'filter: grayscale(100%) invert(75%);'}
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
   transition: 0.5s;
   ${screen.medium`
     order: 3;

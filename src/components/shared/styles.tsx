@@ -40,6 +40,9 @@ export const SubHeaderContainer = styled.div`
   align-items: center;
   opacity: 0;
   transform: translateY(30px);
+  -webkit-transition: 0.7s;
+  -moz-transition: 0.7s;
+  -o-transition: 0.7s;
   transition: 0.7s;
   &.show {
     opacity: 1;

@@ -26,8 +26,10 @@ const TextButtonContainer = styled.div`
   justify-content: center;
   padding-top: 10%;
   width: 60%;
+  -webkit-transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  -moz-transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  -o-transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  /* transition: transform 1s; */
   &.hide {
     opacity: 0;
     transform: translateY(-30px);

@@ -53,6 +53,8 @@ const ColoredHighlightedCharacter = styled(motion.span)`
   -webkit-background-clip: text;
   color: transparent;
   -webkit-transition: background-image 0.2s ease-in-out;
+  -moz-transition: background-image 0.2s ease-in-out;
+  -o-transition: background-image 0.2s ease-in-out;
   transition: background-image 0.2s ease-in-out;
 `;
 

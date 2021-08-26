@@ -2,8 +2,8 @@ import * as React from 'react';
 import { ReactElement } from 'react';
 import IntroText from './IntroText';
 import styled from 'styled-components';
-import Header from './Header';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Scene } from 'react-scrollmagic';
 
 import screen from '../../media/mediaQueries';
 
@@ -26,6 +26,12 @@ const TextButtonContainer = styled.div`
   justify-content: center;
   padding-top: 10%;
   width: 60%;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  /* transition: transform 1s; */
+  &.hide {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
   ${screen.small`
     width: 90%;
   `}
@@ -70,41 +76,42 @@ function LandingPage({ reference }: Props): ReactElement {
 
   return (
     <LandingPageContainer>
-      <Header />
       <AnimatePresence>
-        <TextButtonContainer>
-          <IntroText />
-          <ButtonWrapper
-            initial={{
-              opacity: 0,
-              y: 20,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.5,
-              delay: 1.3,
-            }}
-          >
-            <ShowWorkButton
+        <Scene classToggle="hide" triggerHook={0} offset={150}>
+          <TextButtonContainer>
+            <IntroText />
+            <ButtonWrapper
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
               transition={{
-                duration: 0.15,
+                duration: 0.5,
+                delay: 1.3,
               }}
-              whileHover={{
-                backgroundColor: '#0c8ea9',
-                transition: {
-                  duration: 0.15,
-                  type: 'tween',
-                },
-              }}
-              onClick={handleScrollToRef}
             >
-              Show me your work
-            </ShowWorkButton>
-          </ButtonWrapper>
-        </TextButtonContainer>
+              <ShowWorkButton
+                transition={{
+                  duration: 0.15,
+                }}
+                whileHover={{
+                  backgroundColor: '#0c8ea9',
+                  transition: {
+                    duration: 0.15,
+                    type: 'tween',
+                  },
+                }}
+                onClick={handleScrollToRef}
+              >
+                Show me your work
+              </ShowWorkButton>
+            </ButtonWrapper>
+          </TextButtonContainer>
+        </Scene>
       </AnimatePresence>
     </LandingPageContainer>
   );

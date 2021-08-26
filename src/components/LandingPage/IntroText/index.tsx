@@ -19,6 +19,7 @@ const IntroContainer = styled(motion.div)`
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: flex-start;
+  width: 100%;
   ${screen.small`
     align-items: center;
   `}
@@ -31,6 +32,7 @@ const OverFlowHider = styled.div`
 const IntroLine = styled(motion.h2)`
   overflow: visible;
   color: #f1faee;
+  min-height: 0vw;
   font-size: clamp(1rem, 6.2vw, 5rem);
   font-weight: 600;
   cursor: default;

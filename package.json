@@ -62,7 +62,6 @@
     "@babel/runtime": "^7.15.3",
     "axios": "^0.21.1",
     "framer-motion": "^4.1.17",
-    "freezeframe": "^5.0.2",
-    "react-freezeframe": "^5.0.2"
+    "react-scrollmagic": "^2.3.0"
   }
 }

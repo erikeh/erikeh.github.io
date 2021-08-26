@@ -1,6 +1,5 @@
 import React, { ReactElement, useState, useRef } from 'react';
 import styled from 'styled-components';
-import ReactFreezeFrame from 'react-freezeframe';
 import { ImageWrapper } from '../shared/styles';
 import { SubHeader } from '../shared/components';
 import screen from '../../media/mediaQueries';
@@ -104,16 +103,10 @@ const ProjectPreview = styled.video`
 const DemoLink = styled.a`
   display: inline-block;
   color: #000dc9;
-  /* text-decoration: none; */
   &:hover {
     color: #259ac8;
     transform: scaleX(1);
   }
-`;
-
-const SizedFreezeFrame = styled(ReactFreezeFrame)`
-  max-width: 100%;
-  max-height: 100%;
 `;
 
 function ProjectListItem({
@@ -127,8 +120,6 @@ function ProjectListItem({
   const [isHovering, setIsHovering] = useState(false);
   const [isActiveMobile, setIsActiveMobile] = useState(false);
 
-  const freezeFrameRef = useRef(null);
-
   return (
     <ProjectListItemContainer>
       <ProjectDetailsContainer>
@@ -137,7 +128,7 @@ function ProjectListItem({
           isHovering={isHovering}
           isActiveMobile={isActiveMobile}
         >
-          {description}{' '}
+          {description}
           {demo && (
             <>
               <br />

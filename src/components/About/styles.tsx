@@ -2,6 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import screen from '../../media/mediaQueries';
 import { SectionHeader, SubHeaderText, ImageWrapper } from '../shared/styles';
+import { motion } from 'framer-motion';
 import { SubHeader } from '../shared/components';
 
 // individual HTML elements
@@ -12,7 +13,8 @@ export const AboutContainer = styled.div`
   width: 100%;
   height: 800px;
   padding-top: 36px;
-  background-color: #eef4d4;
+  /* background-color: #eef4d4; */
+  background-color: #001219;
   ${screen.medium`
     height: 1100px;
   `}
@@ -23,6 +25,9 @@ export const SubHeaderAlignmentWrapper = styled.div`
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-start;
+  ${screen.extraLarge`
+    width: 80%;
+  `}
 `;
 
 export const AboutHeader = styled(SectionHeader)`
@@ -84,41 +89,57 @@ export const Bio = styled.p`
   font-family: 'IBM Plex Mono', monospace;
   width: 100%;
   line-height: 18px;
-  color: #001219;
+  /* color: #001219; */
+  color: #e7ecef;
   padding-bottom: 40px;
   ${screen.medium`
     text-align: center;
   `}
 `;
 
-export const Logos = styled.div`
+export const Logos = styled.ul`
   display: flex;
   flex-flow: row wrap;
   align-items: center;
+  background-color: #005f73;
+  border-radius: 10px;
 `;
 
 // Logo Image Elements
-const LogoContainer = styled(ImageWrapper)`
+const LogoContainer = styled(motion.a)`
   display: flex;
+  justify-content: center;
   width: 4vw;
   min-width: 2.5rem;
-  max-width: 4rem;
-  margin-right: 20px;
+  max-width: 3rem;
+  margin: 5px;
 `;
 
 const TechStackLogo = styled.img`
   width: 100%;
-  height: auto;
+  height: 100%;
 `;
 
 interface LogoImageProps {
   img: string;
   alt: string;
+  whileHover: any;
+  link?: string;
 }
 
-export const LogoImage = ({ img, alt }: LogoImageProps): React.ReactElement => {
+export const LogoImage = ({
+  img,
+  alt,
+  whileHover,
+  link,
+}: LogoImageProps): React.ReactElement => {
   return (
-    <LogoContainer>
+    <LogoContainer
+      whileHover={whileHover}
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <TechStackLogo src={img} alt={alt} />
     </LogoContainer>
   );

@@ -11,8 +11,6 @@ const ProjectsContainer = styled.div`
   flex-flow: row nowrap;
   justify-content: center;
   margin-bottom: 200px;
-  /* border-top: 1px dotted white; */
-  /* align-items: center; */
   ${screen.medium`
     height: 2200px;
   `}
@@ -22,7 +20,6 @@ const SubHeaderContentAlignmentContainer = styled.div`
   width: 60%;
   display: flex;
   flex-flow: column nowrap;
-  /* align-items: center; */
   ${screen.extraLarge`
     width: 80%;
   `}

@@ -3,6 +3,9 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import screen from '../../media/mediaQueries';
 
+const ContactContainer = styled.div`
+`;
+
 const ContactButton = styled(motion.button)`
   cursor: pointer;
   font-size: 15px;

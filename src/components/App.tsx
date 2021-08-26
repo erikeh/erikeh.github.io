@@ -4,8 +4,10 @@ import LandingPage from './LandingPage';
 import About from './About';
 import Projects from './Projects';
 import Contact from './Contact';
+import Header from './Header';
 import { hot } from 'react-hot-loader';
 import styled from 'styled-components';
+import { Controller } from 'react-scrollmagic';
 
 import GlobalStyle from '../assets/globalStyle';
 
@@ -20,10 +22,13 @@ const App = () => {
     <AppDiv>
       <GlobalStyle />
       {/* <NavBarElement /> */}
-      <LandingPage reference={projectsRef}/>
-      <Projects reference={projectsRef} />
-      <About />
-      <Contact />
+      <Controller>
+        <Header />
+        <LandingPage reference={projectsRef} />
+        <Projects reference={projectsRef} />
+        <About />
+        <Contact />
+      </Controller>
     </AppDiv>
   );
 };

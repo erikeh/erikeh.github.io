@@ -38,6 +38,13 @@ export const SubHeaderContainer = styled.div`
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.7s;
+  &.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
 `;
 
 // extended

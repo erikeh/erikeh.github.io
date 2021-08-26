@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Scene } from 'react-scrollmagic';
 import {
   AlignFlexStart,
   SubHeaderContainer,
@@ -21,12 +22,14 @@ export const SubHeader = ({
 }: SubHeaderProps): React.ReactElement => {
   return (
     <AlignFlexStart>
-      <SubHeaderContainer>
-        <Text color={color} fontWeight={fontWeight}>
-          {subHeader}
-        </Text>
-        <SubHeaderDecoration>{textDecoration}</SubHeaderDecoration>
-      </SubHeaderContainer>
+      <Scene classToggle="show" triggerHook={0.8} reverse={false}>
+        <SubHeaderContainer>
+          <Text color={color} fontWeight={fontWeight}>
+            {subHeader}
+          </Text>
+          <SubHeaderDecoration>{textDecoration}</SubHeaderDecoration>
+        </SubHeaderContainer>
+      </Scene>
     </AlignFlexStart>
   );
 };

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import LandingPage from './LandingPage';
 import About from './About';
 import Projects from './Projects';

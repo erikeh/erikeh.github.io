@@ -61,7 +61,9 @@
   "dependencies": {
     "@babel/runtime": "^7.15.3",
     "axios": "^0.21.1",
+    "dotenv": "^10.0.0",
     "framer-motion": "^4.1.17",
+    "nodemailer": "^6.6.3",
     "react-scrollmagic": "^2.3.0"
   }
 }

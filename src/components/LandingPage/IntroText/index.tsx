@@ -13,6 +13,9 @@ import {
   introItem,
 } from './variants';
 import screen from '../../../media/mediaQueries';
+import redbg from '../../../assets/img/textBackground/red.jpeg';
+
+type NameLetter = 'E' | 'r' | 'i' | 'k' | 'O' | 'h';
 
 const IntroContainer = styled(motion.div)`
   display: flex;
@@ -52,10 +55,11 @@ const ColoredHighlightedCharacter = styled(motion.span)`
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  -webkit-transition: background-image 0.2s ease-in-out;
+  /* background-image: url(${redbg}); */
+  /* -webkit-transition: background-image 0.2s ease-in-out;
   -moz-transition: background-image 0.2s ease-in-out;
   -o-transition: background-image 0.2s ease-in-out;
-  transition: background-image 0.2s ease-in-out;
+  transition: background-image 0.2s ease-in-out; */
 `;
 
 function IntroText(): ReactElement {
@@ -86,15 +90,27 @@ function IntroText(): ReactElement {
     h: hControl,
   };
 
+  const handleMouseEnter = (char: NameLetter) => {
+    animationControls[char].stop();
+    animationControls[char].start('hover');
+  };
+
+  const handleMouseLeave = (char: NameLetter) => {
+    animationControls[char].stop();
+    animationControls[char].start('initial');
+  };
+
   const animateName = (name: string) =>
-    name.split('').map((char, i) => (
+    (name.split('') as NameLetter[]).map((char: NameLetter, i) => (
       <ColoredHighlightedCharacter
         key={i}
         animate={animationControls[char]}
         variants={variants[char]}
         initial="initial"
-        whileHover="hover"
-        onTap={() => animationControls[char].start('tap')}
+        // whileHover="hover"
+        onMouseEnter={() => handleMouseEnter(char)}
+        onMouseLeave={() => handleMouseLeave(char)}
+        // onTap={() => animationControls[char].start('tap')}
       >
         {char}
       </ColoredHighlightedCharacter>

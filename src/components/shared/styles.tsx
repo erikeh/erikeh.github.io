@@ -39,7 +39,7 @@ export const SubHeaderContainer = styled.div`
   flex-flow: column nowrap;
   align-items: center;
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(10px);
   -webkit-transition: 0.7s;
   -moz-transition: 0.7s;
   -o-transition: 0.7s;

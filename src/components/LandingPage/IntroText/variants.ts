@@ -11,18 +11,27 @@ export const eVariant = {
     backgroundImage: `url(${redbg})`,
     backgroundSize: '400%',
     backgroundPosition: '15% 15%',
+    opacity: [0.7, 1],
     transition: {
       duration: 0.8,
+      opacity: {
+        duration: 0.2,
+      },
     },
   },
   hover: {
     backgroundImage: `url(${polkaDot})`,
     backgroundPosition: `340% 340%`,
+    opacity: [0.7, 1],
     transition: {
       type: 'tween',
       duration: 4,
       ease: 'linear',
       repeat: Infinity,
+      repeatType: 'mirror',
+      opacity: {
+        duration: 0.3,
+      },
     },
   },
 };
@@ -32,19 +41,27 @@ export const rVariant = {
   initial: {
     backgroundImage: `url(${redbg})`,
     backgroundPosition: `--20% 0%`,
+    opacity: [0.7, 1],
     transition: {
       duration: 0.8,
+      opacity: {
+        duration: 0.2,
+      },
     },
   },
   hover: {
     backgroundImage: `url(${rainbowVortex})`,
     backgroundPosition: `-220% 36%`,
+    opacity: [0.7, 1],
     transition: {
       paddingLeft: {
         duration: 0.5,
       },
       paddingRight: {
         duration: 0.5,
+      },
+      opacity: {
+        duration: 0.3,
       },
       type: 'tween',
       duration: 7,
@@ -59,19 +76,27 @@ export const rVariant = {
 export const iVariant = {
   initial: {
     backgroundImage: `url(${redbg})`,
+    opacity: [0.7, 1],
     transition: {
       duration: 0.8,
+      opacity: {
+        duration: 0.2,
+      },
     },
   },
   hover: {
     backgroundImage: `url(${forest})`,
     backgroundPosition: `0% 300%`,
+    opacity: [0.7, 1],
     transition: {
       paddingLeft: {
         duration: 0.5,
       },
       paddingRight: {
         duration: 0.5,
+      },
+      opacity: {
+        duration: 0.3,
       },
       type: 'tween',
       duration: 7,
@@ -85,17 +110,25 @@ export const iVariant = {
 export const kVariant = {
   initial: {
     backgroundImage: `url(${redbg})`,
+    opacity: [0.7, 1],
     transition: {
-      duration: 0.8,
+      // duration: 0.8,
+      opacity: {
+        duration: 0.2,
+      },
     },
   },
   hover: {
     backgroundImage: `url(${lego})`,
     backgroundPosition: `20% -250%`,
+    opacity: [0.7, 1],
     transition: {
-      type: 'spring',
-      duration: 12,
-      ease: 'circOut',
+      opacity: {
+        duration: 0.3,
+      },
+      type: 'tween',
+      duration: 8,
+      // ease: 'circOut',
       repeat: Infinity,
       repeatType: 'reverse',
     },
@@ -106,16 +139,24 @@ export const oVariant = {
   initial: {
     backgroundImage: `url(${redbg})`,
     backgroundSize: '300%',
+    opacity: [0.7, 1],
     backgroundPosition: '20% 20%',
     transition: {
       duration: 0.8,
+      opacity: {
+        duration: 0.2,
+      },
     },
   },
   hover: {
     backgroundImage: `url(${stingrays})`,
     backgroundPosition: `300% 300%`,
     backgroundSize: '300%',
+    opacity: [0.7, 1],
     transition: {
+      opacity: {
+        duration: 0.3,
+      },
       type: 'tween',
       duration: 6,
       ease: 'circOut',
@@ -127,14 +168,22 @@ export const oVariant = {
 export const hVariant = {
   initial: {
     backgroundImage: `url(${redbg})`,
+    opacity: [0.7, 1],
     transition: {
       duration: 0.8,
+      opacity: {
+        duration: 0.2,
+      },
     },
   },
   hover: {
     backgroundImage: `url(${terrazzo})`,
     backgroundPosition: `-300% 100%`,
+    opacity: [0.7, 1],
     transition: {
+      opacity: {
+        duration: 0.3,
+      },
       type: 'tween',
       duration: 12,
       ease: 'linear',
@@ -172,8 +221,8 @@ export const introItem = {
       opacity: {
         duration: 1,
       },
-      type: 'tween',
-      ease: 'easeOut',
+      // type: 'tween',
+      // ease: 'easeOut',
       duration: 0.8,
     },
   },

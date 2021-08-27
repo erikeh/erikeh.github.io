@@ -1,7 +1,7 @@
 import React, { ReactElement, useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence, useAnimation } from 'framer-motion';
 import screen from '../../media/mediaQueries';
 import { SubHeader } from '../shared/components';
 
@@ -44,6 +44,19 @@ const ContactMessageField = styled.textarea`
   padding: 1em 1em;
 `;
 
+const ConfirmationMessageWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #21212c;
+`;
+
+const SubmitConfirmationMessage = styled(motion.p)`
+  position: absolute;
+  padding-top: 18px;
+  font-size: 0.9rem;
+`;
+
 const ContactButton = styled(motion.button)`
   cursor: pointer;
   font-size: 15px;
@@ -71,8 +84,12 @@ function Contact({}: ContactProps): ReactElement {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [confirm, setConfirm] = useState(false);
+
+  const confirmationControl = useAnimation();
 
   const handleSubmitForm = async () => {
+    showSubmitConfirmationText();
     try {
       await axios.post('/messageToEmail', {
         from: email,
@@ -85,6 +102,12 @@ function Contact({}: ContactProps): ReactElement {
     } catch (err) {
       throw new Error(err);
     }
+  };
+
+  const showSubmitConfirmationText = async () => {
+    setConfirm(true);
+    await new Promise((r) => setTimeout(r, 7000));
+    setConfirm(false);
   };
 
   return (
@@ -110,7 +133,21 @@ function Contact({}: ContactProps): ReactElement {
           onChange={(e) => setMessage(e.target.value)}
         />
       </ContactForm>
-
+      <AnimatePresence>
+        {confirm && (
+          <ConfirmationMessageWrapper>
+            <SubmitConfirmationMessage
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 10 }}
+              transition={{ duration: 0.3 }}
+            >
+              Your message has been submitted. I will get back to you as soon as
+              possible!
+            </SubmitConfirmationMessage>
+          </ConfirmationMessageWrapper>
+        )}
+      </AnimatePresence>
       <ContactButton
         transition={{
           duration: 0.15,

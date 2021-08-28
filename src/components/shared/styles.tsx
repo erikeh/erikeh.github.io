@@ -16,11 +16,22 @@ export const SectionHeader = styled.h2`
   justify-content: flex-start;
 `;
 
-export const SubHeaderText = styled.h3`
-  font-size: clamp(2em, 4vw, 4em);
+export const SectionHeaderText = styled.h2<TextProps>`
+  font-size: clamp(2em, 3.5vw, 4.5em);
   font-weight: 600;
   display: flex;
   flex-flow: row nowrap;
+  color: ${(props) => props.color};
+  font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : 600)};
+`
+
+export const SubHeaderText = styled.h3<TextProps>`
+  font-size: clamp(1.5em, 3vw, 4em);
+  font-weight: 600;
+  display: flex;
+  flex-flow: row nowrap;
+  color: ${(props) => props.color};
+  font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : 600)};
 `;
 
 export const ImageWrapper = styled.div`
@@ -56,8 +67,8 @@ export const Text = styled(SubHeaderText)<TextProps>`
   font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : 600)};
 `;
 
-export const SubHeaderDecoration = styled(SubHeaderText)`
-  color: #001219;
+export const SubHeaderDecoration = styled.p`
+  color: ${(props) => props.color};
   display: flex;
   position: relative;
   top: -1vw;

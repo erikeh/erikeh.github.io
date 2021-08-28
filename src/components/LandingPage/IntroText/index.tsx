@@ -15,6 +15,7 @@ import {
 import screen from '../../../media/mediaQueries';
 import redbg from '../../../assets/img/textBackground/red.jpeg';
 
+
 type NameLetter = 'E' | 'r' | 'i' | 'k' | 'O' | 'h';
 
 const IntroContainer = styled(motion.div)`

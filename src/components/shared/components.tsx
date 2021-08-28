@@ -3,19 +3,44 @@ import { Scene } from 'react-scrollmagic';
 import {
   AlignFlexStart,
   SubHeaderContainer,
-  Text,
+  SubHeaderText,
   SubHeaderDecoration,
+  SectionHeaderText,
 } from './styles';
 
 interface SubHeaderProps {
-  subHeader: string;
+  text: string;
   color?: string;
   fontWeight?: number;
   textDecoration?: string;
 }
 
+type SectionHeaderProps = SubHeaderProps;
+
+export const SectionHeader = ({
+  text,
+  color,
+  fontWeight,
+  textDecoration,
+}: SectionHeaderProps): React.ReactElement => {
+  return (
+    <AlignFlexStart>
+      <Scene classToggle="show" triggerHook={0.8} reverse={false}>
+        <SubHeaderContainer>
+          <SectionHeaderText color={color} fontWeight={fontWeight}>
+            {text}
+          </SectionHeaderText>
+          <SubHeaderDecoration color={color}>
+            {textDecoration}
+          </SubHeaderDecoration>
+        </SubHeaderContainer>
+      </Scene>
+    </AlignFlexStart>
+  );
+};
+
 export const SubHeader = ({
-  subHeader,
+  text,
   color,
   fontWeight,
   textDecoration,
@@ -24,10 +49,12 @@ export const SubHeader = ({
     <AlignFlexStart>
       <Scene classToggle="show" triggerHook={0.8} reverse={false}>
         <SubHeaderContainer>
-          <Text color={color} fontWeight={fontWeight}>
-            {subHeader}
-          </Text>
-          <SubHeaderDecoration>{textDecoration}</SubHeaderDecoration>
+          <SubHeaderText color={color} fontWeight={fontWeight}>
+            {text}
+          </SubHeaderText>
+          <SubHeaderDecoration color={color}>
+            {textDecoration}
+          </SubHeaderDecoration>
         </SubHeaderContainer>
       </Scene>
     </AlignFlexStart>

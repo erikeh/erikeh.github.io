@@ -5,7 +5,7 @@ import { SubHeader } from '../shared/components';
 import screen from '../../media/mediaQueries';
 
 interface Props {
-  subHeader: string;
+  text: string;
   src: string;
   description: string;
   technologies: string[];
@@ -53,6 +53,7 @@ const ProjectDescription = styled.p<StyledProps>`
   height: fit-content;
   font-size: 0.9em;
   background-color: #005f73;
+
   /* background-color: #887272; */
   line-height: 20px;
   padding: 15px;
@@ -117,7 +118,7 @@ const DemoLink = styled.a`
 `;
 
 function ProjectListItem({
-  subHeader,
+  text,
   description,
   technologies,
   src,
@@ -130,7 +131,7 @@ function ProjectListItem({
   return (
     <ProjectListItemContainer>
       <ProjectDetailsContainer>
-        <OrderedSubHeader subHeader={subHeader} fontWeight={600} />
+        <OrderedSubHeader text={text} fontWeight={600} />
         <ProjectDescription
           isHovering={isHovering}
           isActiveMobile={isActiveMobile}

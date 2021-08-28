@@ -36,7 +36,7 @@ function ProjectList({}: Props): ReactElement {
           <ProjectListItemWrapper>
             <ProjectListItem
               key={idx}
-              subHeader={project.name}
+              text={project.name}
               description={project.description}
               technologies={project.technologies}
               src={project.src}

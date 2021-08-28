@@ -24,7 +24,9 @@ export const SubHeaderAlignmentWrapper = styled.div`
   width: 60%;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: flex-start;
+  justify-content: center;
+  border-top: 0.5px solid rgb(51, 51, 51);
+  padding-top: 9vh;
   ${screen.extraLarge`
     width: 80%;
   `}
@@ -45,6 +47,7 @@ export const ProfileAndBio = styled.div`
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-around;
+  padding-top: 16px;
   ${screen.extraLarge`
     width: 80%;
   `}

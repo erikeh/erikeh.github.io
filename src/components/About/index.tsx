@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import { SubHeader } from '../shared/components';
+import { SubHeader, SectionHeader } from '../shared/components';
 import profilePic from '../../assets/img/profile_300x400.jpg';
 import logos from './logos';
 import * as s from './styles';
@@ -24,7 +24,7 @@ function About({}: AboutProps): ReactElement {
   return (
     <s.AboutContainer>
       <s.SubHeaderAlignmentWrapper>
-        <SubHeader subHeader={'<About />'} color={'#423d88'} fontWeight={200} />
+        <SectionHeader text={'ABOUT'} fontWeight={200} />
       </s.SubHeaderAlignmentWrapper>
       <s.ProfileAndBio>
         <s.ProfilePictureWrapper>
@@ -37,9 +37,9 @@ function About({}: AboutProps): ReactElement {
         </s.ProfilePictureWrapper>
         <s.DetailsContainer>
           <SubHeader
-            subHeader={`Who's Erik?`}
+            text={`Who's Erik?`}
             color={'#e7ecef'}
-            fontWeight={600}
+            fontWeight={200}
             textDecoration={'-'}
           />
           <s.Bio>
@@ -48,9 +48,9 @@ function About({}: AboutProps): ReactElement {
             modularized and thoughtful code.`}
           </s.Bio>
           <SubHeader
-            subHeader={`Technologies`}
+            text={`Technologies`}
             color={'#e7ecef'}
-            fontWeight={600}
+            fontWeight={200}
             textDecoration={'-'}
           />
           <s.Logos>{logoList}</s.Logos>

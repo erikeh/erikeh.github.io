@@ -15,7 +15,7 @@ export const eVariant = {
     transition: {
       duration: 0.8,
       opacity: {
-        duration: 0.2,
+        duration: 0.3,
       },
     },
   },
@@ -28,9 +28,9 @@ export const eVariant = {
       duration: 4,
       ease: 'linear',
       repeat: Infinity,
-      repeatType: 'mirror',
+      // repeatType: 'mirror',
       opacity: {
-        duration: 0.3,
+        duration: 0.5,
       },
     },
   },

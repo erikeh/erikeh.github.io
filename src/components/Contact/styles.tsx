@@ -21,6 +21,16 @@ export const ContactContainerCenter = styled.div`
   align-items: center;
   min-height: 500px;
   flex: 0 1 600px;
+  opacity: 0;
+  transform: translateY(25px);
+  -webkit-transition: 0.7s;
+  -moz-transition: 0.7s;
+  -o-transition: 0.7s;
+  transition: 0.7s;
+  &.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
 `;
 
 export const CTAMessage = styled.h3`

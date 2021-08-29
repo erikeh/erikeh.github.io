@@ -10,14 +10,24 @@ export const AboutContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  opacity: 0;
+  transform: translateY(25px);
   width: 100%;
   height: 800px;
   padding-top: 36px;
   /* background-color: #eef4d4; */
   background-color: #001219;
+  -webkit-transition: 0.7s;
+  -moz-transition: 0.7s;
+  -o-transition: 0.7s;
+  transition: 0.7s;
   ${screen.medium`
     height: 1100px;
   `}
+  &.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
 `;
 
 export const SubHeaderAlignmentWrapper = styled.div`
@@ -25,7 +35,7 @@ export const SubHeaderAlignmentWrapper = styled.div`
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
-  border-top: 0.5px solid rgb(51, 51, 51);
+  /* border-top: 0.5px solid rgb(51, 51, 51); */
   padding-top: 9vh;
   ${screen.extraLarge`
     width: 80%;

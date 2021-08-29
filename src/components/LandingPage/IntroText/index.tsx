@@ -52,7 +52,7 @@ const IntroLine = styled(motion.h2)`
 
 const ColoredHighlightedCharacter = styled(motion.span)`
   background-size: 550%;
-  display: inline-flex;
+  display: inline;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -92,12 +92,12 @@ function IntroText(): ReactElement {
   };
 
   const handleMouseEnter = (char: NameLetter) => {
-    animationControls[char].stop();
+    // animationControls[char].stop();
     animationControls[char].start('hover');
   };
 
   const handleMouseLeave = (char: NameLetter) => {
-    animationControls[char].stop();
+    // animationControls[char].stop();
     animationControls[char].start('initial');
   };
 

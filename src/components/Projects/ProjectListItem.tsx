@@ -58,11 +58,16 @@ const ProjectDescription = styled.p<StyledProps>`
   line-height: 20px;
   padding: 15px;
   margin-bottom: 20px;
+  /* margin-right: -25%; */
   box-shadow: 2px 5px 25px -15px black;
   ${(props) =>
     props.isHovering
       ? 'margin-left: -26%; margin-right: 1%;'
       : 'margin-right: -25%;'}
+  /* ${(props) =>
+    props.isHovering
+      ? 'transform: translateX(-20%); '
+      : 'transform: translateX(0);'} */
   z-index: 2;
   -webkit-transition: margin 0.3s ease-out;
   -moz-transition: margin 0.3s ease-out;
@@ -126,6 +131,7 @@ function ProjectListItem({
   demo,
 }: Props): ReactElement {
   const [isHovering, setIsHovering] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [isActiveMobile, setIsActiveMobile] = useState(false);
 
   return (
@@ -137,6 +143,7 @@ function ProjectListItem({
           isActiveMobile={isActiveMobile}
         >
           {description}
+          {/* if provided demo link, goes here*/}
           {demo && (
             <>
               <br />
@@ -172,10 +179,15 @@ function ProjectListItem({
           loop
           muted
           playsInline
+          preload={'auto'}
           onMouseEnter={(e) => (e.target as HTMLVideoElement).play()}
           onMouseLeave={(e) => (e.target as HTMLVideoElement).pause()}
         >
-          <source src={src} type="video/mp4" />
+          <source
+            src={src}
+            type="video/mp4"
+            onLoadedData={() => setIsLoading(false)}
+          />
         </ProjectPreview>
       </ProjectPreviewWrapper>
     </ProjectListItemContainer>

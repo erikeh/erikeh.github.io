@@ -21,7 +21,7 @@ const SubHeaderContentAlignmentContainer = styled.div`
   flex-flow: column nowrap;
   align-items: center;
   width: 60%;
-  border-top: 0.5px solid rgb(51, 51, 51);
+  /* border-top: 0.5px solid rgb(51, 51, 51); */
   padding-top: 9vh;
   ${screen.extraLarge`
     width: 80%;

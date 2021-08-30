@@ -57,10 +57,10 @@ const ColoredHighlightedCharacter = styled(motion.span)`
   -webkit-background-clip: text;
   color: transparent;
   /* background-image: url(${redbg}); */
-  /* -webkit-transition: background-image 0.2s ease-in-out;
+  -webkit-transition: background-image 0.2s ease-in-out;
   -moz-transition: background-image 0.2s ease-in-out;
   -o-transition: background-image 0.2s ease-in-out;
-  transition: background-image 0.2s ease-in-out; */
+  transition: background-image 0.2s ease-in-out;
 `;
 
 function IntroText(): ReactElement {
@@ -108,9 +108,9 @@ function IntroText(): ReactElement {
         animate={animationControls[char]}
         variants={variants[char]}
         initial="initial"
-        // whileHover="hover"
-        onMouseEnter={() => handleMouseEnter(char)}
-        onMouseLeave={() => handleMouseLeave(char)}
+        whileHover="hover"
+        // onMouseEnter={() => handleMouseEnter(char)}
+        // onMouseLeave={() => handleMouseLeave(char)}
         // onTap={() => animationControls[char].start('tap')}
       >
         {char}

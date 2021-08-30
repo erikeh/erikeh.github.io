@@ -15,6 +15,7 @@ export const AboutContainer = styled.div`
   width: 100%;
   height: 800px;
   padding-top: 36px;
+  /* padding-bottom: 10%; */
   /* background-color: #eef4d4; */
   background-color: #001219;
   -webkit-transition: 0.7s;
@@ -58,6 +59,7 @@ export const ProfileAndBio = styled.div`
   align-items: flex-start;
   justify-content: space-around;
   padding-top: 16px;
+  padding-bottom: 30px;
   ${screen.extraLarge`
     width: 80%;
   `}
@@ -69,6 +71,9 @@ export const ProfileAndBio = styled.div`
 `;
 
 export const ProfilePictureWrapper = styled(ImageWrapper)`
+  display: flex;
+  height: 100%;
+  align-items: center;
   flex: 0 1 300px;
   align-items: center;
   ${screen.medium`
@@ -100,11 +105,11 @@ export const DetailsContainer = styled.section`
 
 export const Bio = styled.p`
   font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.9em;
   width: 100%;
-  line-height: 18px;
-  /* color: #001219; */
+  line-height: 20px;
   color: #e7ecef;
-  padding-bottom: 40px;
+  padding-bottom: 30px;
   ${screen.medium`
     text-align: center;
   `}
@@ -114,8 +119,11 @@ export const Logos = styled.ul`
   display: flex;
   flex-flow: row wrap;
   align-items: center;
+  padding: 10px;
   background-color: #005f73;
-  border-radius: 10px;
+  border-radius: 5px;
+  margin-left: clamp(1.5em, 3vw, 3em);
+  margin-right: clamp(1.5em, 3vw, 3em);
 `;
 
 // Logo Image Elements

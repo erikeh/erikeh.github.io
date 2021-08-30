@@ -17,7 +17,7 @@ export const SectionHeader = styled.h2`
 `;
 
 export const SectionHeaderText = styled.h2<TextProps>`
-  font-size: clamp(2em, 3.5vw, 4.5em);
+  font-size: clamp(2em, 3.5vw, 4em);
   font-weight: 600;
   display: flex;
   flex-flow: row nowrap;
@@ -69,11 +69,13 @@ export const Text = styled(SubHeaderText)<TextProps>`
 
 export const SubHeaderDecoration = styled.p`
   color: ${(props) => props.color};
+  font-size: clamp(1.5em, 3vw, 4em);
   display: flex;
   position: relative;
   top: -1vw;
   flex-flow: row nowrap;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
+  width: 100%;
   height: 40px;
 `;

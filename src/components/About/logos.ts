@@ -14,25 +14,35 @@ import sassLogo from '../../assets/img/logos/sass.svg';
 import expressLogo from '../../assets/img/logos/express.svg';
 
 const logos = {
-  reactLogo: {
-    src: reactLogo,
-    alt: 'React Logo',
-    link: 'https://reactjs.org/',
-  },
   javascriptLogo: {
     src: javascriptLogo,
     alt: 'JavaScript Logo',
     link: 'https://www.javascript.com/',
+  },
+  typescriptLogo: {
+    src: typescriptLogo,
+    alt: 'TypeScript Logo',
+    link: 'https://www.typescriptlang.org/',
   },
   nodeLogo: {
     src: nodeLogo,
     alt: 'Node.js Logo',
     link: 'https://nodejs.org/',
   },
-  typescriptLogo: {
-    src: typescriptLogo,
-    alt: 'TypeScript Logo',
-    link: 'https://www.typescriptlang.org/',
+  reactLogo: {
+    src: reactLogo,
+    alt: 'React Logo',
+    link: 'https://reactjs.org/',
+  },
+  reduxLogo: {
+    src: reduxLogo,
+    alt: 'Redux Logo',
+    link: 'https://redux.js.org/',
+  },
+  expressLogo: {
+    src: expressLogo,
+    alt: 'express JS Logo',
+    link: 'https://expressjs.com/',
   },
   htmlLogo: {
     src: htmlLogo,
@@ -43,11 +53,6 @@ const logos = {
     src: cssLogo,
     alt: 'CSS 3 Logo',
     link: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
-  },
-  reduxLogo: {
-    src: reduxLogo,
-    alt: 'Redux Logo',
-    link: 'https://redux.js.org/',
   },
   dockerLogo: {
     src: dockerLogo,
@@ -78,11 +83,6 @@ const logos = {
     src: sassLogo,
     alt: 'SASS Logo',
     link: 'https://sass-lang.com/',
-  },
-  expressLogo: {
-    src: expressLogo,
-    alt: 'express JS Logo',
-    link: 'https://expressjs.com/',
   },
 };
 

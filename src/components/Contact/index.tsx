@@ -1,6 +1,7 @@
 import React, { ReactElement, useState } from 'react';
 import axios from 'axios';
 import { Scene } from 'react-scrollmagic';
+import { useForm } from 'react-hook-form';
 import { AnimatePresence, useAnimation } from 'framer-motion';
 import { SectionHeader } from '../shared/components';
 import * as s from './styles';
@@ -13,18 +14,24 @@ function Contact({}: ContactProps): ReactElement {
   const [message, setMessage] = useState('');
   const [confirm, setConfirm] = useState(false);
 
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+
   const confirmationControl = useAnimation();
 
-  const handleSubmitForm = async () => {
+  const handleSubmitForm = async (inputData) => {
     try {
+      const { Name, Email, Message } = inputData;
       await axios.post('/messageToEmail', {
-        from: email,
-        name,
-        text: message,
+        from: Email,
+        name: Name,
+        text: Message,
       });
-      setName('');
-      setEmail('');
-      setMessage('');
+      reset();
       showSubmitConfirmationText();
     } catch (err) {
       throw new Error(err);
@@ -39,66 +46,88 @@ function Contact({}: ContactProps): ReactElement {
 
   return (
     <s.AlignCenterWrapper>
-      <Scene classToggle="show" triggerHook={0.5} reverse={false}>
+      <Scene classToggle="show" triggerHook={0.8} reverse={false}>
         <s.ContactContainerCenter>
           <SectionHeader text={'CONTACT'} color={'#f1faee'} fontWeight={200} />
           <s.CTAMessage>
             Have any questions, or would be interested in my services?
           </s.CTAMessage>
-          <s.ContactForm>
+          <s.ContactForm onSubmit={handleSubmit(handleSubmitForm)}>
             <s.ContactField
               placeholder="Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              {...register('Name', {
+                required: {
+                  value: true,
+                  message: '* Please fill out this field',
+                },
+                maxLength: {
+                  value: 80,
+                  message: '* Name cannot exceed 80 characters',
+                },
+              })}
             />
-
-            {/* revisit when validating fields
-            <div style={{ position: 'relative' }}>
-            <s.NameValidation>Please enter name</s.NameValidation>
-            </div>
-          */}
-
+            {errors.Name && (
+              <s.ValidationError>{errors.Name.message}</s.ValidationError>
+            )}
             <s.ContactField
               placeholder="Enter email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              {...register('Email', {
+                required: {
+                  value: true,
+                  message: '* Please fill out this field',
+                },
+                pattern: {
+                  value: /^\S+@\S+$/i,
+                  message: '* Please fill out with valid email',
+                },
+              })}
             />
+            {errors.Email && (
+              <s.ValidationError>{errors.Email.message}</s.ValidationError>
+            )}
             <s.ContactMessageField
               placeholder="Your Message"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
+              {...register('Message', {
+                required: {
+                  value: true,
+                  message:
+                    '* Please fill out this field. Even a short message is okay!',
+                },
+              })}
+            />
+            {errors.Message && (
+              <s.ValidationError>{errors.Message.message}</s.ValidationError>
+            )}
+            <AnimatePresence>
+              {confirm && (
+                <s.ConfirmationMessageWrapper>
+                  <s.SubmitConfirmationMessage
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    Your message has been submitted. I will get back to you as
+                    soon as possible!
+                  </s.SubmitConfirmationMessage>
+                </s.ConfirmationMessageWrapper>
+              )}
+            </AnimatePresence>
+            <s.ContactButton
+              type="submit"
+              value="Submit"
+              transition={{
+                duration: 0.15,
+              }}
+              whileHover={{
+                backgroundColor: '#0c8ea9',
+                transition: {
+                  duration: 0.15,
+                  type: 'tween',
+                },
+              }}
             />
           </s.ContactForm>
-          <AnimatePresence>
-            {confirm && (
-              <s.ConfirmationMessageWrapper>
-                <s.SubmitConfirmationMessage
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 10 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  Your message has been submitted. I will get back to you as
-                  soon as possible!
-                </s.SubmitConfirmationMessage>
-              </s.ConfirmationMessageWrapper>
-            )}
-          </AnimatePresence>
-          <s.ContactButton
-            transition={{
-              duration: 0.15,
-            }}
-            whileHover={{
-              backgroundColor: '#0c8ea9',
-              transition: {
-                duration: 0.15,
-                type: 'tween',
-              },
-            }}
-            onClick={handleSubmitForm}
-          >
-            Submit
-          </s.ContactButton>
         </s.ContactContainerCenter>
       </Scene>
     </s.AlignCenterWrapper>

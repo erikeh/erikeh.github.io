@@ -1,5 +1,7 @@
 import React, { ReactElement } from 'react';
 import styled from 'styled-components';
+import githubIcon from '../../assets/img/github-icon.svg';
+import linkedInIcon from '../../assets/img/linkedin-icon.svg';
 
 interface Props {}
 

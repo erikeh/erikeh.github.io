@@ -64,6 +64,8 @@
     "dotenv": "^10.0.0",
     "framer-motion": "^4.1.17",
     "nodemailer": "^6.6.3",
-    "react-scrollmagic": "^2.3.0"
+    "react-hook-form": "^7.14.1",
+    "react-scrollmagic": "^2.3.0",
+    "smoothscroll-polyfill": "^0.4.4"
   }
 }

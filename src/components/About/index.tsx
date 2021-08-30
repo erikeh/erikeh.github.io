@@ -42,22 +42,27 @@ function About({}: AboutProps): ReactElement {
               text={`Who's Erik?`}
               color={'#e7ecef'}
               fontWeight={200}
-              textDecoration={'-'}
+              textDecoration={'------------'}
             />
             <s.Bio>
-              {`I'm a full-stack developer living in Los Angeles, LA. I'm passionate
-            about great UX. But I'm equally passionate about writing organized,
+              {`I'm a full-stack developer living in Los Angeles, CA. I'm passionate
+            about technology and UX, but I'm equally passionate about writing organized,
             modularized and thoughtful code.`}
             </s.Bio>
-            <SubHeader
-              text={`Technologies`}
-              color={'#e7ecef'}
-              fontWeight={200}
-              textDecoration={'-'}
-            />
-            <s.Logos>{logoList}</s.Logos>
+            <s.Bio>
+              {`I've worked in agencies with non-stop deadlines, startups with ever changing workflows, and recently had my own startup where I learned how to communicate efficiently across technical and non-technical team members. Now, I would love nothing more than to offer my experiences and skills as a developer to help solve problems individually, and as a team.`}
+            </s.Bio>
+            <s.Bio>
+              {`In my free time, I take my dog to the park, go surfing early in the morning, or create alien soundscapes with my modular synth!`}
+            </s.Bio>
           </s.DetailsContainer>
         </s.ProfileAndBio>
+        <SubHeader
+          text={`Core Technologies`}
+          color={'#e7ecef'}
+          fontWeight={200}
+        />
+        <s.Logos>{logoList}</s.Logos>
       </s.AboutContainer>
     </Scene>
   );

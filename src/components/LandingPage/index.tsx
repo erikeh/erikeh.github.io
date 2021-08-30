@@ -1,11 +1,14 @@
 import * as React from 'react';
 import { ReactElement } from 'react';
+import smoothscroll from 'smoothscroll-polyfill';
 import IntroText from './IntroText';
 import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Scene } from 'react-scrollmagic';
 
 import screen from '../../media/mediaQueries';
+
+smoothscroll.polyfill();
 
 interface Props {
   reference: React.RefObject<HTMLDivElement>;
@@ -62,6 +65,8 @@ const ShowWorkButton = styled(motion.button)`
   height: 45px;
   margin-top: 50px;
   padding: 8px;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-text-stroke: 1px transparent;
   ${screen.small`
     margin-left: 0;
     width: 40%;

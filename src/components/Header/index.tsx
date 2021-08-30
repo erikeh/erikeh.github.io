@@ -10,7 +10,7 @@ const HeaderContainer = styled.div`
   justify-content: flex-end;
   padding: 18px;
   width: 100%;
-  height: 50px;
+  height: 60px;
 `;
 
 const LinksContainer = styled.div`
@@ -20,7 +20,12 @@ const LinksContainer = styled.div`
 const Link = styled.a`
   color: white;
   text-decoration: none;
+  width: 30px;
   padding-left: 20px;
+`;
+
+const Icon = styled.img`
+  height: 100%;
 `;
 
 function Header({}: Props): ReactElement {
@@ -28,13 +33,13 @@ function Header({}: Props): ReactElement {
     <HeaderContainer>
       <LinksContainer>
         <Link href="https://github.com/erikeh" aria-label="github">
-          github
+          <Icon src={githubIcon} alt="github icon" />
         </Link>
         <Link
           href="https://www.linkedin.com/in/yoon-hwan-erik-oh/"
           aria-label="LinkedIn"
         >
-          LinkedIn
+          <Icon src={linkedInIcon} alt="linkedIn Icon" />
         </Link>
       </LinksContainer>
     </HeaderContainer>

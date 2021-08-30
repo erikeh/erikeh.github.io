@@ -6,9 +6,11 @@ import { AnimatePresence, useAnimation } from 'framer-motion';
 import { SectionHeader } from '../shared/components';
 import * as s from './styles';
 
-interface ContactProps {}
+interface ContactProps {
+  contactRef: React.RefObject<HTMLDivElement>;
+}
 
-function Contact({}: ContactProps): ReactElement {
+function Contact({ contactRef }: ContactProps): ReactElement {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -45,7 +47,7 @@ function Contact({}: ContactProps): ReactElement {
   };
 
   return (
-    <s.AlignCenterWrapper>
+    <s.AlignCenterWrapper ref={contactRef}>
       <Scene classToggle="show" triggerHook={0.8} reverse={false}>
         <s.ContactContainerCenter>
           <SectionHeader text={'CONTACT'} color={'#f1faee'} fontWeight={200} />

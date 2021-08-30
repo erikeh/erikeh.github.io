@@ -66,6 +66,7 @@
     "nodemailer": "^6.6.3",
     "react-hook-form": "^7.14.1",
     "react-scrollmagic": "^2.3.0",
+    "react-use-scroll-direction": "^0.1.0",
     "smoothscroll-polyfill": "^0.4.4"
   }
 }

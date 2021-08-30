@@ -11,7 +11,7 @@ import screen from '../../media/mediaQueries';
 smoothscroll.polyfill();
 
 interface Props {
-  reference: React.RefObject<HTMLDivElement>;
+  projectsRef: React.RefObject<HTMLDivElement>;
 }
 
 const LandingPageContainer = styled.div`
@@ -76,9 +76,9 @@ const ShowWorkButton = styled(motion.button)`
   `}
 `;
 
-function LandingPage({ reference }: Props): ReactElement {
+function LandingPage({ projectsRef }: Props): ReactElement {
   const handleScrollToRef = () => {
-    reference.current.scrollIntoView({ behavior: 'smooth' });
+    projectsRef.current.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (

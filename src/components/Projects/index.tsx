@@ -1,4 +1,4 @@
-import React, { ReactElement, Ref } from 'react';
+import React, { ReactElement, RefObject } from 'react';
 import ProjectList from './ProjectList';
 import { SubHeader, SectionHeader } from '../shared/components';
 import styled from 'styled-components';
@@ -29,12 +29,12 @@ const SubHeaderContentAlignmentContainer = styled.div`
 `;
 
 interface ProjectsProps {
-  reference: Ref<HTMLDivElement>;
+  projectsRef: RefObject<HTMLDivElement>;
 }
 
-function Projects({ reference }: ProjectsProps): ReactElement {
+function Projects({ projectsRef }: ProjectsProps): ReactElement {
   return (
-    <ProjectsContainer ref={reference}>
+    <ProjectsContainer ref={projectsRef}>
       <SubHeaderContentAlignmentContainer>
         <SectionHeader text={'PROJECTS'} fontWeight={200} />
         <ProjectList />

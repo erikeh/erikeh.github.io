@@ -7,8 +7,8 @@ export const AlignCenterWrapper = styled.div`
   flex-flow: row nowrap;
   justify-content: center;
   width: 100%;
-  padding-top: 15em;
-  padding-bottom: 8vh;
+  padding-top: 18em;
+  padding-bottom: 20vh;
 `;
 
 export const ContactContainerCenter = styled.div`

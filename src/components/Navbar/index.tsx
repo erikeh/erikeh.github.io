@@ -114,6 +114,7 @@ function Navbar({
                 variants={childVariant}
                 href="https://github.com/erikeh"
                 target="_blank"
+                rel="noopener noreferrer"
                 aria-label="github"
               >
                 <s.Icon src={githubIcon} alt="github icon" />
@@ -122,6 +123,7 @@ function Navbar({
                 variants={childVariant}
                 href="https://www.linkedin.com/in/yoon-hwan-erik-oh/"
                 target="_blank"
+                rel="noopener noreferrer"
                 aria-label="LinkedIn"
               >
                 <s.Icon src={linkedInIcon} alt="linkedIn Icon" />

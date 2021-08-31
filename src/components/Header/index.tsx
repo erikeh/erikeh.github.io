@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import githubIcon from '../../assets/img/github-icon.svg';
 import linkedInIcon from '../../assets/img/linkedin-icon.svg';
 
-interface Props {}
-
 const HeaderContainer = styled.div`
   display: flex;
   justify-content: flex-end;
@@ -28,7 +26,7 @@ const Icon = styled.img`
   height: 100%;
 `;
 
-function Header({}: Props): ReactElement {
+function Header(): ReactElement {
   return (
     <HeaderContainer>
       <LinksContainer>

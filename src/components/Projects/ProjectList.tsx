@@ -1,11 +1,9 @@
-import React, { ReactElement, useState, useEffect } from 'react';
+import React, { ReactElement } from 'react';
 import styled from 'styled-components';
 import ProjectListItem from './ProjectListItem';
 import projects, { Project } from './projectInfo';
 import screen from '../../media/mediaQueries';
-import { Scene, Controller } from 'react-scrollmagic';
-
-interface Props {}
+import { Scene } from 'react-scrollmagic';
 
 const ProjectListItemWrapper = styled.div`
   display: flex;
@@ -28,7 +26,7 @@ const ProjectListItemWrapper = styled.div`
   }
 `;
 
-function ProjectList({}: Props): ReactElement {
+function ProjectList(): ReactElement {
   return (
     <>
       {(projects as Project[]).map((project, idx) => (

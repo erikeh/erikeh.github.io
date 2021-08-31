@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ReactElement } from 'react';
 import styled from 'styled-components';
-import { motion, useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 import {
   eVariant,
   rVariant,
@@ -13,8 +13,6 @@ import {
   introItem,
 } from './variants';
 import screen from '../../../media/mediaQueries';
-import redbg from '../../../assets/img/textBackground/red.jpeg';
-
 
 type NameLetter = 'E' | 'r' | 'i' | 'k' | 'O' | 'h';
 
@@ -23,13 +21,14 @@ const IntroContainer = styled(motion.div)`
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: flex-start;
+  /* line-height: 7.7em; */
   width: 100%;
   ${screen.small`
     align-items: center;
   `}
 `;
 
-const OverFlowHider = styled.div`
+const OverFlowHider = styled(motion.div)`
   overflow: hidden;
 `;
 
@@ -51,7 +50,6 @@ const IntroLine = styled(motion.h2)`
 `;
 
 const ColoredHighlightedCharacter = styled(motion.span)`
-  /* background-size: 550%; */
   display: inline;
   background-clip: text;
   -webkit-background-clip: text;
@@ -73,38 +71,11 @@ function IntroText(): ReactElement {
     h: hVariant,
   };
 
-  // create imperative animation controls to account for mobile interactions
-  const eControl = useAnimation();
-  const rControl = useAnimation();
-  const iControl = useAnimation();
-  const kControl = useAnimation();
-  const OControl = useAnimation();
-  const hControl = useAnimation();
-
-  const animationControls = {
-    E: eControl,
-    r: rControl,
-    i: iControl,
-    k: kControl,
-    O: OControl,
-    h: hControl,
-  };
-
-  const handleMouseEnter = (char: NameLetter) => {
-    // animationControls[char].stop();
-    animationControls[char].start('hover');
-  };
-
-  const handleMouseLeave = (char: NameLetter) => {
-    // animationControls[char].stop();
-    animationControls[char].start('initial');
-  };
-
   const animateName = (name: string) =>
     (name.split('') as NameLetter[]).map((char: NameLetter, i) => (
       <ColoredHighlightedCharacter
         key={i}
-        animate={animationControls[char]}
+        // animate={animationControls[char]}
         variants={variants[char]}
         initial="initial"
         whileHover="hover"
@@ -115,7 +86,9 @@ function IntroText(): ReactElement {
 
   return (
     <IntroContainer variants={intro} initial="hidden" animate="show">
-      <OverFlowHider>
+      <OverFlowHider
+        animate={{ overflow: 'visible', transition: { delay: 0.61 } }}
+      >
         <IntroLine variants={introItem}>
           {`My name is ` + ' '} {animateName('Erik')} {animateName('Oh')}
         </IntroLine>
@@ -123,7 +96,9 @@ function IntroText(): ReactElement {
       <OverFlowHider>
         <IntroLine variants={introItem}>{`and I'm a full-stack`}</IntroLine>
       </OverFlowHider>
-      <OverFlowHider>
+      <OverFlowHider
+        animate={{ overflow: 'visible', transition: { delay: 0.89 } }}
+      >
         <IntroLine variants={introItem}>{`software engineer`}</IntroLine>
       </OverFlowHider>
     </IntroContainer>

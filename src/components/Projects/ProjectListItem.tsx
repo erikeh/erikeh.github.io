@@ -1,6 +1,5 @@
 import React, { ReactElement, useState, useRef } from 'react';
 import styled from 'styled-components';
-import { ImageWrapper } from '../shared/styles';
 import { SubHeader } from '../shared/components';
 import screen from '../../media/mediaQueries';
 
@@ -53,21 +52,14 @@ const ProjectDescription = styled.p<StyledProps>`
   height: fit-content;
   font-size: 0.9em;
   background-color: #005f73;
-
-  /* background-color: #887272; */
   line-height: 20px;
   padding: 15px;
   margin-bottom: 20px;
-  /* margin-right: -25%; */
   box-shadow: 2px 5px 25px -15px black;
   ${(props) =>
     props.isHovering
       ? 'margin-left: -26%; margin-right: 1%;'
       : 'margin-right: -25%;'}
-  /* ${(props) =>
-    props.isHovering
-      ? 'transform: translateX(-20%); '
-      : 'transform: translateX(0);'} */
   z-index: 2;
   -webkit-transition: margin 0.3s ease-out;
   -moz-transition: margin 0.3s ease-out;
@@ -87,7 +79,6 @@ const Technologies = styled.ul`
   flex-flow: column wrap;
   font-family: 'IBM Plex Mono', monospace;
   height: 50px;
-  /* flex: 0 1 40px; */
   ${screen.medium`
     order: 3;
     margin 2% 0;
@@ -143,7 +134,6 @@ function ProjectListItem({
           isActiveMobile={isActiveMobile}
         >
           {description}
-          {/* if provided demo link, goes here*/}
           {demo && (
             <>
               <br />

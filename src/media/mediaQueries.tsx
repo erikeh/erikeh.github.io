@@ -1,5 +1,12 @@
 import { css, DefaultTheme, ThemedCssFunction } from 'styled-components';
 
+interface MediaScreenSizes {
+  small: ThemedCssFunction<DefaultTheme>;
+  medium: ThemedCssFunction<DefaultTheme>;
+  large: ThemedCssFunction<DefaultTheme>;
+  extraLarge: ThemedCssFunction<DefaultTheme>;
+}
+
 const sizes = {
   small: 500,
   medium: 680,
@@ -14,4 +21,4 @@ export default Object.keys(sizes).reduce((acc, label) => {
     }
   `;
   return acc;
-}, {} as ThemedCssFunction<DefaultTheme>);
+}, {} as MediaScreenSizes);

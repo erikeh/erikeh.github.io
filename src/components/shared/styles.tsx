@@ -1,6 +1,4 @@
-import * as React from 'react';
-
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 interface TextProps {
   color: string;
@@ -23,7 +21,7 @@ export const SectionHeaderText = styled.h2<TextProps>`
   flex-flow: row nowrap;
   color: ${(props) => props.color};
   font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : 600)};
-`
+`;
 
 export const SubHeaderText = styled.h3<TextProps>`
   font-size: clamp(1.5em, 3vw, 4em);

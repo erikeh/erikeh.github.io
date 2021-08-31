@@ -1,6 +1,6 @@
 import React, { ReactElement, RefObject } from 'react';
 import ProjectList from './ProjectList';
-import { SubHeader, SectionHeader } from '../shared/components';
+import { SectionHeader } from '../shared/components';
 import styled from 'styled-components';
 import screen from '../../media/mediaQueries';
 

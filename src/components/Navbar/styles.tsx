@@ -67,6 +67,7 @@ export const NavbarItem = styled(motion.button)`
   border: none;
   padding: 0;
   font: inherit;
+  font-size: 1.1em;
   cursor: pointer;
   outline: inherit;
   padding: 15px;
@@ -96,7 +97,6 @@ export const LinksContainer = styled.div`
   ${screen.small`
     display: none;
   `}
-
 `;
 
 export const Link = styled(motion.a)`
@@ -114,6 +114,8 @@ export const Icon = styled.img`
 // hamburger menu styles
 export const HamburgerContainer = styled.div<MobileScrollProps>`
   display: none;
+  width: 70px;
+
   padding: 8px 10px;
   cursor: pointer;
   ${screen.small`

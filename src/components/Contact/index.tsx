@@ -2,7 +2,7 @@ import React, { ReactElement, useState } from 'react';
 import axios from 'axios';
 import { Scene } from 'react-scrollmagic';
 import { useForm } from 'react-hook-form';
-import { AnimatePresence, useAnimation } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 import { SectionHeader } from '../shared/components';
 import * as s from './styles';
 
@@ -11,9 +11,6 @@ interface ContactProps {
 }
 
 function Contact({ contactRef }: ContactProps): ReactElement {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
   const [confirm, setConfirm] = useState(false);
 
   const {
@@ -22,8 +19,6 @@ function Contact({ contactRef }: ContactProps): ReactElement {
     reset,
     formState: { errors },
   } = useForm();
-
-  const confirmationControl = useAnimation();
 
   const handleSubmitForm = async (inputData) => {
     try {

@@ -4,7 +4,6 @@ import { Scene } from 'react-scrollmagic';
 import profilePic from '../../assets/img/profile_300x400.jpg';
 import logos from './logos';
 import * as s from './styles';
-import { css } from 'styled-components';
 
 interface AboutProps {
   aboutRef: React.RefObject<HTMLDivElement>;

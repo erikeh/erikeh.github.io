@@ -1,9 +1,8 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import screen from '../../media/mediaQueries';
-import { SectionHeader, SubHeaderText, ImageWrapper } from '../shared/styles';
+import { SectionHeader, ImageWrapper } from '../shared/styles';
 import { motion } from 'framer-motion';
-import { SubHeader } from '../shared/components';
 
 // individual HTML elements
 export const AboutContainer = styled.div`

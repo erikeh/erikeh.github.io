@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import screen from '../../media/mediaQueries';
-import { motion  } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 export const AlignCenterWrapper = styled.div`
   display: flex;

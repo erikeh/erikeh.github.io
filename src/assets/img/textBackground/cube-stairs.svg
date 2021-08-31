@@ -1,0 +1,58 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="100px" width="100px">
+  <defs>
+    <pattern id="doodad" width="23.09" height="40" viewBox="0 0 34.64101615137755 60" patternUnits="userSpaceOnUse" patternTransform="rotate(135)">
+      <rect width="100%" height="100%" fill="#2a4365"/>
+      <path d="M51.96 30L51.96 50L34.64 60L34.64 40z" stroke-linejoin="miter" fill="rgba(56, 161, 105,1)" filter="url(#filter-doodad-1)"/>
+      <path d="M17.32 30L17.32 50L0 60L0 40z" stroke-linejoin="miter" fill="rgba(56, 161, 105,1)" filter="url(#filter-doodad-1)"/>
+      <path d="M34.64 0L34.64 20L17.32 30L17.32 10z" stroke-linejoin="miter" fill="rgba(56, 161, 105,1)" filter="url(#filter-doodad-1)"/>
+      <path d="M34.64 60L34.64 80L17.32 90L17.32 70z" stroke-linejoin="miter" fill="rgba(56, 161, 105,1)" filter="url(#filter-doodad-1)"/>
+      <path d="M34.64 60L17.32 50L17.32 30L34.64 40z" stroke-linejoin="miter" fill="#ecc94b"/>
+      <path d="M0 60L-17.32 50L-17.32 30L0 40z" stroke-linejoin="miter" fill="#ecc94b"/>
+      <path d="M17.32 30L0 20L0 0L17.32 10z" stroke-linejoin="miter" fill="#ecc94b"/>
+      <path d="M17.32 90L0 80L0 60L17.32 70z" stroke-linejoin="miter" fill="#ecc94b"/>
+      <path d="M32.91 41L32.91 39L34.64 38L34.64 40z" stroke-linejoin="miter" fill="rgba(56, 161, 105,1)" filter="url(#filter-doodad-1)"/>
+      <path d="M-1.73 41L-1.73 39L0 38L0 40z" stroke-linejoin="miter" fill="rgba(56, 161, 105,1)" filter="url(#filter-doodad-1)"/>
+      <path d="M15.59 11L15.59 9L17.32 8L17.32 10z" stroke-linejoin="miter" fill="rgba(56, 161, 105,1)" filter="url(#filter-doodad-1)"/>
+      <path d="M15.59 71L15.59 69L17.32 68L17.32 70z" stroke-linejoin="miter" fill="rgba(56, 161, 105,1)" filter="url(#filter-doodad-1)"/>
+      <path d="M34.64 38L36.37 39L36.37 41L34.64 40z" stroke-linejoin="miter" fill="#ecc94b"/>
+      <path d="M0 38L1.73 39L1.73 41L0 40z" stroke-linejoin="miter" fill="#ecc94b"/>
+      <path d="M17.32 8L19.05 9L19.05 11L17.32 10z" stroke-linejoin="miter" fill="#ecc94b"/>
+      <path d="M17.32 68L19.05 69L19.05 71L17.32 70z" stroke-linejoin="miter" fill="#ecc94b"/>
+      <path d="M36.37 41L34.64 42L32.91 41L34.64 40z" stroke-linejoin="miter" background="true" fill="rgba(56, 161, 105,1)" filter="url(#filter-doodad-1)"/>
+      <path d="M1.73 41L0 42L-1.73 41L0 40z" stroke-linejoin="miter" background="true" fill="rgba(56, 161, 105,1)" filter="url(#filter-doodad-1)"/>
+      <path d="M19.05 11L17.32 12L15.59 11L17.32 10z" stroke-linejoin="miter" background="true" fill="rgba(56, 161, 105,1)" filter="url(#filter-doodad-1)"/>
+      <path d="M19.05 71L17.32 72L15.59 71L17.32 70z" stroke-linejoin="miter" background="true" fill="rgba(56, 161, 105,1)" filter="url(#filter-doodad-1)"/>
+      <path d="M34.64 40.1L34.55 40.05L34.55 39.95L34.64 40z" stroke-linejoin="miter" fill="#ecc94b"/>
+      <path d="M0 40.1L-0.09 40.05L-0.09 39.95L0 40z" stroke-linejoin="miter" fill="#ecc94b"/>
+      <path d="M17.32 10.1L17.23 10.05L17.23 9.95L17.32 10z" stroke-linejoin="miter" fill="#ecc94b"/>
+      <path d="M17.32 70.1L17.23 70.05L17.23 69.95L17.32 70z" stroke-linejoin="miter" fill="#ecc94b"/>
+      <path d="M34.73 39.95L34.73 40.05L34.64 40.1L34.64 40z" stroke-linejoin="miter" fill="rgba(56, 161, 105,1)" filter="url(#filter-doodad-1)"/>
+      <path d="M0.09 39.95L0.09 40.05L0 40.1L0 40z" stroke-linejoin="miter" fill="rgba(56, 161, 105,1)" filter="url(#filter-doodad-1)"/>
+      <path d="M17.41 9.95L17.41 10.05L17.32 10.1L17.32 10z" stroke-linejoin="miter" fill="rgba(56, 161, 105,1)" filter="url(#filter-doodad-1)"/>
+      <path d="M17.41 69.95L17.41 70.05L17.32 70.1L17.32 70z" stroke-linejoin="miter" fill="rgba(56, 161, 105,1)" filter="url(#filter-doodad-1)"/>
+      <path d="M34.55 39.95L34.64 39.9L34.73 39.95L34.64 40z" stroke-linejoin="miter" background="true" fill="#ecc94b"/>
+      <path d="M-0.09 39.95L0 39.9L0.09 39.95L0 40z" stroke-linejoin="miter" background="true" fill="#ecc94b"/>
+      <path d="M17.23 9.95L17.32 9.9L17.41 9.95L17.32 10z" stroke-linejoin="miter" background="true" fill="#ecc94b"/>
+      <path d="M17.23 69.95L17.32 69.9L17.41 69.95L17.32 70z" stroke-linejoin="miter" background="true" fill="#ecc94b"/>
+      <path d="M34.64 40L34.64 40L34.64 40L34.64 40z" stroke-linejoin="miter" fill="rgba(56, 161, 105,1)" filter="url(#filter-doodad-1)"/>
+      <path d="M0 40L0 40L0 40L0 40z" stroke-linejoin="miter" fill="rgba(56, 161, 105,1)" filter="url(#filter-doodad-1)"/>
+      <path d="M17.32 10L17.32 10L17.32 10L17.32 10z" stroke-linejoin="miter" fill="rgba(56, 161, 105,1)" filter="url(#filter-doodad-1)"/>
+      <path d="M17.32 70L17.32 70L17.32 70L17.32 70z" stroke-linejoin="miter" fill="rgba(56, 161, 105,1)" filter="url(#filter-doodad-1)"/>
+      <path d="M34.64 40L34.64 40L34.64 40L34.64 40z" stroke-linejoin="miter" fill="#ecc94b"/>
+      <path d="M0 40L0 40L0 40L0 40z" stroke-linejoin="miter" fill="#ecc94b"/>
+      <path d="M17.32 10L17.32 10L17.32 10L17.32 10z" stroke-linejoin="miter" fill="#ecc94b"/>
+      <path d="M17.32 70L17.32 70L17.32 70L17.32 70z" stroke-linejoin="miter" fill="#ecc94b"/>
+      <path d="M34.64 40L34.64 40L34.64 40L34.64 40z" stroke-linejoin="miter" background="true" fill="rgba(56, 161, 105,1)" filter="url(#filter-doodad-1)"/>
+      <path d="M0 40L0 40L0 40L0 40z" stroke-linejoin="miter" background="true" fill="rgba(56, 161, 105,1)" filter="url(#filter-doodad-1)"/>
+      <path d="M17.32 10L17.32 10L17.32 10L17.32 10z" stroke-linejoin="miter" background="true" fill="rgba(56, 161, 105,1)" filter="url(#filter-doodad-1)"/>
+      <path d="M17.32 70L17.32 70L17.32 70L17.32 70z" stroke-linejoin="miter" background="true" fill="rgba(56, 161, 105,1)" filter="url(#filter-doodad-1)"/>
+    </pattern>
+    <filter id="filter-doodad-1">
+      <feTurbulence baseFrequency="0" numOctaves="2" type="fractalNoise" result="result1"/>
+      <feDisplacementMap in2="result1" scale="0" result="result2" xChannelSelector="R" in="SourceGraphic"/>
+      <feComposite in2="result2" in="SourceGraphic" operator="atop" result="fbSourceGraphic"/>
+    </filter>
+  </defs>
+  <rect fill="url(#doodad)" height="200%" width="200%"/>
+</svg>

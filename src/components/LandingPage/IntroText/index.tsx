@@ -51,12 +51,11 @@ const IntroLine = styled(motion.h2)`
 `;
 
 const ColoredHighlightedCharacter = styled(motion.span)`
-  background-size: 550%;
+  /* background-size: 550%; */
   display: inline;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  /* background-image: url(${redbg}); */
   -webkit-transition: background-image 0.2s ease-in-out;
   -moz-transition: background-image 0.2s ease-in-out;
   -o-transition: background-image 0.2s ease-in-out;

@@ -1,10 +1,10 @@
 import polkaDot from '../../../assets/img/textBackground/polka-dots.svg';
-import rainbowVortex from '../../../assets/img/textBackground/rainbow-vortex.svg';
-import terrazzo from '../../../assets/img/textBackground/terrazzo.jpg';
 import redbg from '../../../assets/img/textBackground/red.jpeg';
-import lego from '../../../assets/img/textBackground/lego.jpg';
-import forest from '../../../assets/img/textBackground/forest.jpg';
 import stingrays from '../../../assets/img/textBackground/stingrays.svg';
+import charlieBrown from '../../../assets/img/textBackground/charlie-brown.svg';
+import cubeStairs from '../../../assets/img/textBackground/cube-stairs.svg';
+import stripe from '../../../assets/img/textBackground/stripe.svg';
+import spots from '../../../assets/img/textBackground/dalmatian-spots.svg';
 
 export const eVariant = {
   initial: {
@@ -13,9 +13,6 @@ export const eVariant = {
     backgroundPosition: '15% 15%',
     transition: {
       duration: 0.8,
-      // opacity: {
-      //   duration: 0.3,
-      // },
     },
   },
   hover: {
@@ -26,71 +23,46 @@ export const eVariant = {
       duration: 4,
       ease: 'linear',
       repeat: Infinity,
-      // repeatType: 'mirror',
     },
   },
 };
 
-// find a better svg
 export const rVariant = {
   initial: {
     backgroundImage: `url(${redbg})`,
-    backgroundPosition: `--20% 0%`,
+    backgroundSize: '300%',
     transition: {
       duration: 0.8,
-      // opacity: {
-      //   duration: 0.2,
-      // },
     },
   },
   hover: {
-    backgroundImage: `url(${rainbowVortex})`,
-    backgroundPosition: `-220% 36%`,
+    backgroundImage: `url(${spots})`,
+    backgroundPosition: `-150% 0`,
     transition: {
-      paddingLeft: {
-        duration: 0.5,
+      backgroundPosition: {
+        type: 'tween',
+        duration: 2,
+        ease: 'linear',
+        repeat: Infinity,
       },
-      paddingRight: {
-        duration: 0.5,
-      },
-      opacity: {
-        duration: 0.3,
-      },
-      type: 'tween',
-      duration: 7,
-      ease: 'linear',
-      repeat: Infinity,
-      repeatType: 'mirror',
     },
   },
 };
 
-// find a better svg
 export const iVariant = {
   initial: {
     backgroundImage: `url(${redbg})`,
+    backgroundSize: '200%',
     transition: {
       duration: 0.8,
-      opacity: {
-        duration: 0.2,
-      },
     },
   },
   hover: {
-    backgroundImage: `url(${forest})`,
-    backgroundPosition: `0% 300%`,
+    backgroundImage: `url(${charlieBrown})`,
+    backgroundPosition: `0 300%`,
     transition: {
-      paddingLeft: {
-        duration: 0.5,
-      },
-      paddingRight: {
-        duration: 0.5,
-      },
-      opacity: {
-        duration: 0.3,
-      },
       type: 'tween',
-      duration: 7,
+      duration: 4,
       ease: 'easeOut',
       repeat: Infinity,
       repeatType: 'mirror',
@@ -106,12 +78,13 @@ export const kVariant = {
     },
   },
   hover: {
-    backgroundImage: `url(${lego})`,
-    backgroundPosition: `20% -250%`,
+    backgroundImage: `url(${cubeStairs})`,
+    backgroundSize: ['200%', '100%'],
+    backgroundPosition: `50% -250%`,
     transition: {
       type: 'tween',
-      duration: 8,
-      // ease: 'circOut',
+      duration: 4,
+      ease: 'easeOut',
       repeat: Infinity,
       repeatType: 'reverse',
     },
@@ -130,7 +103,6 @@ export const oVariant = {
   hover: {
     backgroundImage: `url(${stingrays})`,
     backgroundPosition: `300% 300%`,
-    backgroundSize: '300%',
     transition: {
       type: 'tween',
       duration: 6,
@@ -148,14 +120,13 @@ export const hVariant = {
     },
   },
   hover: {
-    backgroundImage: `url(${terrazzo})`,
+    backgroundImage: `url(${stripe})`,
     backgroundPosition: `-300% 100%`,
     transition: {
       type: 'tween',
-      duration: 12,
+      duration: 8,
       ease: 'linear',
       repeat: Infinity,
-      repeatType: 'mirror',
     },
   },
 };
@@ -188,8 +159,6 @@ export const introItem = {
       opacity: {
         duration: 1,
       },
-      // type: 'tween',
-      // ease: 'easeOut',
       duration: 0.8,
     },
   },

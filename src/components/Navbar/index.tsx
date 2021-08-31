@@ -51,7 +51,7 @@ const NavbarItem = styled.button`
   font: inherit;
   cursor: pointer;
   outline: inherit;
-  padding: 10px 15px;
+  padding: 15px;
   &:hover {
     background-color: #0c1c22;
   }
@@ -62,7 +62,9 @@ const LinksContainer = styled.div`
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-end;
-  flex: 0 1 100px;
+  align-items: center;
+  /* background-color: grey; */
+  flex: 0 1 200px;
   padding-right: 10px;
 `;
 
@@ -70,11 +72,16 @@ const Link = styled.a`
   color: white;
   text-decoration: none;
   width: 30px;
+  margin: 0 12px;
+  &:hover {
+    background-color: #0c1c22;
+  }
 `;
 
 const Icon = styled.img`
   height: 30px;
-  /* padding-left: 20px; */
+  width: 100%;
+  /* margin-right: 20px; */
 `;
 
 function Navbar({ projectsRef, aboutRef, contactRef }: Props): ReactElement {

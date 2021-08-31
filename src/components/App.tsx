@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import LandingPage from './LandingPage';
 import About from './About';
 import Projects from './Projects';
@@ -16,6 +16,8 @@ const AppDiv = styled.div`
 `;
 
 const App = () => {
+  const [navbarAnimationComplete, setNavbarAnimationComplete] = useState(false);
+
   const projectsRef = useRef(null);
   const aboutRef = useRef(null);
   const contactRef = useRef(null);
@@ -23,13 +25,17 @@ const App = () => {
   return (
     <AppDiv>
       <Navbar
+        setNavbarAnimationComplete={setNavbarAnimationComplete}
         projectsRef={projectsRef}
         aboutRef={aboutRef}
         contactRef={contactRef}
       />
       <GlobalStyle />
       <Controller>
-        <LandingPage projectsRef={projectsRef} />
+        <LandingPage
+          projectsRef={projectsRef}
+          navbarAnimationComplete={navbarAnimationComplete}
+        />
         <Projects projectsRef={projectsRef} />
         <About aboutRef={aboutRef} />
         <Contact contactRef={contactRef} />

@@ -141,6 +141,7 @@ export const intro = {
   show: {
     opacity: 1,
     transition: {
+      delay: 1,
       staggerChildren: 0.1,
     },
   },

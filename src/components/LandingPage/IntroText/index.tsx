@@ -108,9 +108,6 @@ function IntroText(): ReactElement {
         variants={variants[char]}
         initial="initial"
         whileHover="hover"
-        // onMouseEnter={() => handleMouseEnter(char)}
-        // onMouseLeave={() => handleMouseLeave(char)}
-        // onTap={() => animationControls[char].start('tap')}
       >
         {char}
       </ColoredHighlightedCharacter>

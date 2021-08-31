@@ -12,6 +12,7 @@ smoothscroll.polyfill();
 
 interface Props {
   projectsRef: React.RefObject<HTMLDivElement>;
+  navbarAnimationComplete: boolean;
 }
 
 const LandingPageContainer = styled.div`
@@ -76,7 +77,10 @@ const ShowWorkButton = styled(motion.button)`
   `}
 `;
 
-function LandingPage({ projectsRef }: Props): ReactElement {
+function LandingPage({
+  projectsRef,
+  navbarAnimationComplete,
+}: Props): ReactElement {
   const handleScrollToRef = () => {
     projectsRef.current.scrollIntoView({ behavior: 'smooth' });
   };
@@ -84,41 +88,43 @@ function LandingPage({ projectsRef }: Props): ReactElement {
   return (
     <LandingPageContainer>
       <AnimatePresence>
-        <Scene classToggle="hide" triggerHook={0} offset={150}>
-          <TextButtonContainer>
-            <IntroText />
-            <ButtonWrapper
-              initial={{
-                opacity: 0,
-                y: 20,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.5,
-                delay: 1.3,
-              }}
-            >
-              <ShowWorkButton
+        {navbarAnimationComplete && (
+          <Scene classToggle="hide" triggerHook={0} offset={150}>
+            <TextButtonContainer>
+              <IntroText />
+              <ButtonWrapper
+                initial={{
+                  opacity: 0,
+                  y: 20,
+                }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                }}
                 transition={{
-                  duration: 0.15,
+                  duration: 0.5,
+                  delay: 1.3,
                 }}
-                whileHover={{
-                  backgroundColor: '#0c8ea9',
-                  transition: {
-                    duration: 0.15,
-                    type: 'tween',
-                  },
-                }}
-                onClick={handleScrollToRef}
               >
-                Show me your work
-              </ShowWorkButton>
-            </ButtonWrapper>
-          </TextButtonContainer>
-        </Scene>
+                <ShowWorkButton
+                  transition={{
+                    duration: 0.15,
+                  }}
+                  whileHover={{
+                    backgroundColor: '#0c8ea9',
+                    transition: {
+                      duration: 0.15,
+                      type: 'tween',
+                    },
+                  }}
+                  onClick={handleScrollToRef}
+                >
+                  Show me your work
+                </ShowWorkButton>
+              </ButtonWrapper>
+            </TextButtonContainer>
+          </Scene>
+        )}
       </AnimatePresence>
     </LandingPageContainer>
   );

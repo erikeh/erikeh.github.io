@@ -1,9 +1,11 @@
-## My Portfolio Website
+# My Portfolio Website
 
-### About
-This is a simple portfolio site I built for myself from scratch. I did not use any component library or css framework besides styled components. It is fully responsive and has good browser compatibility.
+Check it out [here](https://erikoh.me/)!
 
-Built with:
+## About
+This is a simple portfolio site I built for myself from scratch. There is no use of component libraries or css frameworks besides styled components. It is fully responsive and has good browser compatibility.
+
+## Built with:
 
 Front end: React, TypeScript, styled-components, react-scrollmagic
 

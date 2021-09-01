@@ -26,7 +26,7 @@ const project1: Project = {
   ],
   src: noteJSDemo,
   link: 'https://github.com/erikeh/note-js-musical-playground',
-  demo: 'http://18.144.8.57/',
+  demo: 'https://notejs.erikoh.me',
 };
 
 const project2: Project = {

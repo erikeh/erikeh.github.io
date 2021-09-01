@@ -60,13 +60,16 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.15.3",
+    "@types/scrollmagic": "^2.0.2",
     "axios": "^0.21.1",
     "dotenv": "^10.0.0",
     "framer-motion": "^4.1.17",
     "nodemailer": "^6.6.3",
     "react-hook-form": "^7.14.1",
+    "react-responsive": "^9.0.0-beta.3",
     "react-scrollmagic": "^2.3.0",
     "react-use-scroll-direction": "^0.1.0",
+    "scrollmagic": "^2.0.8",
     "smoothscroll-polyfill": "^0.4.4"
   }
 }

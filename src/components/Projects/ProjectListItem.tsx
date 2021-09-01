@@ -1,7 +1,9 @@
-import React, { ReactElement, useState, useRef } from 'react';
+import React, { ReactElement, useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { SubHeader } from '../shared/components';
 import screen from '../../media/mediaQueries';
+import { useMediaQuery } from 'react-responsive';
+import ScrollMagic from 'scrollmagic';
 
 interface Props {
   text: string;
@@ -14,7 +16,6 @@ interface Props {
 
 interface StyledProps {
   isHovering: boolean;
-  isActiveMobile: boolean;
 }
 
 const ProjectListItemContainer = styled.div`
@@ -123,16 +124,73 @@ function ProjectListItem({
 }: Props): ReactElement {
   const [isHovering, setIsHovering] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [isActiveMobile, setIsActiveMobile] = useState(false);
+
+  const isMobile = useMediaQuery({ query: `(max-width: 680px)` });
+  const isDesktop = useMediaQuery({ query: `(min-width: 681px)` });
+  const videoRef = useRef<HTMLVideoElement>();
+  const controller = new ScrollMagic.Controller();
+
+  const playVideo = () => {
+    videoRef.current?.play();
+    setIsHovering(true);
+  };
+  const playVideoMobile = () => {
+    if (isMobile) {
+      videoRef.current?.play();
+      setIsHovering(true);
+    }
+  };
+
+  const pauseVideo = () => {
+    videoRef.current?.pause();
+    setIsHovering(false);
+  };
+  const pauseVideoMobile = () => {
+    if (isMobile) {
+      videoRef.current?.pause();
+      setIsHovering(false);
+    }
+  };
+
+  // const [isMobile, setIsMobile] = useState(false);
+  //choose the screen size
+  // const handleResize = () => {
+  //   if (window.innerWidth < 680) {
+  //     setIsMobile(true);
+  //   } else {
+  //     setIsMobile(false);
+  //   }
+  // };
+
+  // create an event listener
+  // useEffect(() => {
+  //   window.addEventListener('resize', handleResize);
+  // });
+
+  useEffect(() => {
+    console.log('what is videoref: ', videoRef);
+    const scene = new ScrollMagic.Scene({
+      triggerElement: videoRef.current,
+      duration: 500,
+    })
+      .on('enter', () => {
+        if (isMobile) {
+          playVideo();
+        }
+      })
+      .on('leave', () => {
+        if (isMobile) {
+          pauseVideo();
+        }
+      })
+      .addTo(controller);
+  }, [isMobile]);
 
   return (
     <ProjectListItemContainer>
       <ProjectDetailsContainer>
         <OrderedSubHeader text={text} fontWeight={600} />
-        <ProjectDescription
-          isHovering={isHovering}
-          isActiveMobile={isActiveMobile}
-        >
+        <ProjectDescription isHovering={isHovering}>
           {description}
           {demo && (
             <>
@@ -157,22 +215,14 @@ function ProjectListItem({
 
       <ProjectPreviewWrapper
         isHovering={isHovering}
-        isActiveMobile={isActiveMobile}
-        onMouseEnter={() => setIsHovering(true)}
-        onMouseLeave={() => setIsHovering(false)}
+        onMouseEnter={playVideo}
+        onMouseLeave={pauseVideo}
         href={link}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Github Page to project"
       >
-        <ProjectPreview
-          loop
-          muted
-          playsInline
-          preload={'auto'}
-          onMouseEnter={(e) => (e.target as HTMLVideoElement).play()}
-          onMouseLeave={(e) => (e.target as HTMLVideoElement).pause()}
-        >
+        <ProjectPreview ref={videoRef} loop muted playsInline preload={'auto'}>
           <source
             src={src}
             type="video/mp4"

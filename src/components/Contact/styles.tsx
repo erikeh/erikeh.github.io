@@ -17,7 +17,6 @@ export const ContactContainerCenter = styled.div`
   justify-content: center;
   align-items: center;
   width: 60%;
-  /* border-top: 0.5px solid rgb(51, 51, 51); */
   padding-top: 9vh;
   align-items: center;
   min-height: 500px;
@@ -45,7 +44,6 @@ export const CTAMessage = styled.h3`
 export const ContactForm = styled.form`
   display: flex;
   flex-flow: column nowrap;
-  /* width: 30em; */
 `;
 
 export const ContactField = styled.input`

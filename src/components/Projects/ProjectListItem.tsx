@@ -134,38 +134,11 @@ function ProjectListItem({
     videoRef.current?.play();
     setIsHovering(true);
   };
-  const playVideoMobile = () => {
-    if (isMobile) {
-      videoRef.current?.play();
-      setIsHovering(true);
-    }
-  };
 
   const pauseVideo = () => {
     videoRef.current?.pause();
     setIsHovering(false);
   };
-  const pauseVideoMobile = () => {
-    if (isMobile) {
-      videoRef.current?.pause();
-      setIsHovering(false);
-    }
-  };
-
-  // const [isMobile, setIsMobile] = useState(false);
-  //choose the screen size
-  // const handleResize = () => {
-  //   if (window.innerWidth < 680) {
-  //     setIsMobile(true);
-  //   } else {
-  //     setIsMobile(false);
-  //   }
-  // };
-
-  // create an event listener
-  // useEffect(() => {
-  //   window.addEventListener('resize', handleResize);
-  // });
 
   useEffect(() => {
     console.log('what is videoref: ', videoRef);

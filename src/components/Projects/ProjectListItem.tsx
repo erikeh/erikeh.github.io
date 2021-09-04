@@ -66,7 +66,7 @@ const ProjectDescription = styled.p<StyledProps>`
   -moz-transition: margin 0.3s ease-out;
   -o-transition: margin 0.3s ease-out;
   transition: margin 0.3s ease-out;
-  ${screen.medium`
+  ${screen.medium<StyledProps>`
     margin 0;
     order: 2;
     ${(props) => props.isHovering && 'margin 0;'}
@@ -123,10 +123,8 @@ function ProjectListItem({
   demo,
 }: Props): ReactElement {
   const [isHovering, setIsHovering] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
 
   const isMobile = useMediaQuery({ query: `(max-width: 680px)` });
-  const isDesktop = useMediaQuery({ query: `(min-width: 681px)` });
   const videoRef = useRef<HTMLVideoElement>();
   const controller = new ScrollMagic.Controller();
 
@@ -196,11 +194,7 @@ function ProjectListItem({
         aria-label="Github Page to project"
       >
         <ProjectPreview ref={videoRef} loop muted playsInline preload={'auto'}>
-          <source
-            src={src}
-            type="video/mp4"
-            onLoadedData={() => setIsLoading(false)}
-          />
+          <source src={src} type="video/mp4" />
         </ProjectPreview>
       </ProjectPreviewWrapper>
     </ProjectListItemContainer>
@@ -208,4 +202,3 @@ function ProjectListItem({
 }
 
 export default ProjectListItem;
-

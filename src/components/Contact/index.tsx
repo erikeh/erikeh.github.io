@@ -10,6 +10,12 @@ interface ContactProps {
   contactRef: React.RefObject<HTMLDivElement>;
 }
 
+interface InputData {
+  Name: string;
+  Email: string;
+  Message: string;
+}
+
 function Contact({ contactRef }: ContactProps): ReactElement {
   const [confirm, setConfirm] = useState(false);
 
@@ -20,7 +26,7 @@ function Contact({ contactRef }: ContactProps): ReactElement {
     formState: { errors },
   } = useForm();
 
-  const handleSubmitForm = async (inputData) => {
+  const handleSubmitForm = async (inputData: InputData) => {
     try {
       const { Name, Email, Message } = inputData;
       await axios.post('/messageToEmail', {

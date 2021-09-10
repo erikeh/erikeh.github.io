@@ -123,10 +123,10 @@ function ProjectListItem({
   demo,
 }: Props): ReactElement {
   const [isHovering, setIsHovering] = useState(false);
-
-  const isMobile = useMediaQuery({ query: `(max-width: 680px)` });
+  const [isTrue, setIsTrue] = useState(true);
+  const isMobile = useMediaQuery({ query: '(max-width: 680px)' });
+  const isDesktop = useMediaQuery({ query: '(min-width: 681px)' });
   const videoRef = useRef<HTMLVideoElement>();
-  const controller = new ScrollMagic.Controller();
 
   const playVideo = () => {
     videoRef.current?.play();
@@ -138,24 +138,42 @@ function ProjectListItem({
     setIsHovering(false);
   };
 
+  function playVideoMobile() {
+    // if (isMobile) {
+    //   playVideo();
+    // }
+    console.log('is mobile true in function? ', isMobile);
+    // console.log('is true: ', isTrue);
+  };
+
+  const pauseVideoMobile = () => {
+    // if (isMobile) {
+    //   pauseVideo();
+    // }
+    // console.log('is mobile true in function?: ', isMobile);
+  };
+
   useEffect(() => {
-    console.log('what is videoref: ', videoRef);
+    const controller = new ScrollMagic.Controller();
     const scene = new ScrollMagic.Scene({
       triggerElement: videoRef.current,
       duration: 500,
     })
-      .on('enter', () => {
-        if (isMobile) {
-          playVideo();
-        }
-      })
-      .on('leave', () => {
-        if (isMobile) {
-          pauseVideo();
-        }
-      })
+      .on('enter', playVideoMobile)
+      .on('leave', pauseVideoMobile)
       .addTo(controller);
+    console.log('scene is created');
+  }, []);
+
+  useEffect(() => {
+    console.log('isMobile?: ', isMobile);
   }, [isMobile]);
+
+
+  // useEffect(() => {
+  //   scene.off('enter').off('leave').addTo(controller)
+  //   console.log('isDesktop?: ', isDesktop);
+  // }, [isDesktop]);
 
   return (
     <ProjectListItemContainer>

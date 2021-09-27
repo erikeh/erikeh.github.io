@@ -17,14 +17,14 @@ interface Props {
   projectsRef: RefObject<HTMLDivElement>;
   aboutRef: RefObject<HTMLDivElement>;
   contactRef: RefObject<HTMLDivElement>;
-  setNavbarAnimationComplete: Dispatch<SetStateAction<boolean>>;
+  setNavbarAnimationIsComplete: Dispatch<SetStateAction<boolean>>;
 }
 
 function Navbar({
   projectsRef,
   aboutRef,
   contactRef,
-  setNavbarAnimationComplete,
+  setNavbarAnimationIsComplete,
 }: Props): ReactElement {
   const [isOpenDesktop, setIsOpenDesktop] = useState(true);
   const [isOpenMobile, setIsOpenMobile] = useState(false);
@@ -76,7 +76,7 @@ function Navbar({
           variants={parentVariant}
           initial="hidden"
           animate="show"
-          onAnimationComplete={() => setNavbarAnimationComplete(true)}
+          onAnimationComplete={() => setNavbarAnimationIsComplete(true)}
           isOpenDesktop={isOpenDesktop}
           scrollingUp={isScrollingUp}
           scrollingDown={isScrollingDown}

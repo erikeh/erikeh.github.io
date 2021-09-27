@@ -12,7 +12,7 @@ smoothscroll.polyfill();
 
 interface Props {
   projectsRef: React.RefObject<HTMLDivElement>;
-  navbarAnimationComplete: boolean;
+  navbarAnimationIsComplete: boolean;
 }
 
 const LandingPageContainer = styled.div`
@@ -79,7 +79,7 @@ const ShowWorkButton = styled(motion.button)`
 
 function LandingPage({
   projectsRef,
-  navbarAnimationComplete,
+  navbarAnimationIsComplete,
 }: Props): ReactElement {
   const handleScrollToRef = () => {
     projectsRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -88,7 +88,7 @@ function LandingPage({
   return (
     <LandingPageContainer>
       <AnimatePresence>
-        {navbarAnimationComplete && (
+        {navbarAnimationIsComplete && (
           <Scene classToggle="hide" triggerHook={0} offset={150}>
             <TextButtonContainer>
               <IntroText />

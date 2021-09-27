@@ -123,7 +123,6 @@ function ProjectListItem({
   demo,
 }: Props): ReactElement {
   const [isHovering, setIsHovering] = useState(false);
-  const [isTrue, setIsTrue] = useState(true);
   const isMobile = useMediaQuery({ query: '(max-width: 680px)' });
   const isDesktop = useMediaQuery({ query: '(min-width: 681px)' });
   const videoRef = useRef<HTMLVideoElement>();
@@ -139,17 +138,17 @@ function ProjectListItem({
   };
 
   function playVideoMobile() {
-    // if (isMobile) {
-    //   playVideo();
-    // }
-    console.log('is mobile true in function? ', isMobile);
+    if (isMobile) {
+      playVideo();
+    }
+    // console.log('is mobile true in function? ', isMobile);
     // console.log('is true: ', isTrue);
-  };
+  }
 
   const pauseVideoMobile = () => {
-    // if (isMobile) {
-    //   pauseVideo();
-    // }
+    if (isMobile) {
+      pauseVideo();
+    }
     // console.log('is mobile true in function?: ', isMobile);
   };
 
@@ -168,7 +167,6 @@ function ProjectListItem({
   useEffect(() => {
     console.log('isMobile?: ', isMobile);
   }, [isMobile]);
-
 
   // useEffect(() => {
   //   scene.off('enter').off('leave').addTo(controller)

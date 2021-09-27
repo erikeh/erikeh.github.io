@@ -16,7 +16,8 @@ const AppDiv = styled.div`
 `;
 
 const App = () => {
-  const [navbarAnimationComplete, setNavbarAnimationComplete] = useState(false);
+  const [navbarAnimationIsComplete, setNavbarAnimationIsComplete] =
+    useState(false);
 
   const projectsRef = useRef(null);
   const aboutRef = useRef(null);
@@ -25,7 +26,7 @@ const App = () => {
   return (
     <AppDiv>
       <Navbar
-        setNavbarAnimationComplete={setNavbarAnimationComplete}
+        setNavbarAnimationIsComplete={setNavbarAnimationIsComplete}
         projectsRef={projectsRef}
         aboutRef={aboutRef}
         contactRef={contactRef}
@@ -34,7 +35,7 @@ const App = () => {
       <Controller>
         <LandingPage
           projectsRef={projectsRef}
-          navbarAnimationComplete={navbarAnimationComplete}
+          navbarAnimationIsComplete={navbarAnimationIsComplete}
         />
         <Projects projectsRef={projectsRef} />
         <About aboutRef={aboutRef} />

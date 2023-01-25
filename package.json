@@ -39,7 +39,9 @@
     "start": "forever -o out.log -e err.log -w src/server",
     "build": "react-app-rewired build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -65,6 +67,7 @@
     "@types/matter-js": "^0.17.4",
     "@types/styled-components": "^5.1.11",
     "express": "^4.17.1",
+    "gh-pages": "^5.0.0",
     "react-app-rewired": "^2.1.8"
   }
 }

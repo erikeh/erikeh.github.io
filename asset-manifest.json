@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/erikeh.github.io/static/css/main.4a6536ac.chunk.css",
+    "main.js": "/erikeh.github.io/static/js/main.d40a5753.chunk.js",
+    "main.js.map": "/erikeh.github.io/static/js/main.d40a5753.chunk.js.map",
+    "runtime-main.js": "/erikeh.github.io/static/js/runtime-main.2c40c164.js",
+    "runtime-main.js.map": "/erikeh.github.io/static/js/runtime-main.2c40c164.js.map",
+    "static/css/2.dc73c9fe.chunk.css": "/erikeh.github.io/static/css/2.dc73c9fe.chunk.css",
+    "static/js/2.e0f54091.chunk.js": "/erikeh.github.io/static/js/2.e0f54091.chunk.js",
+    "static/js/2.e0f54091.chunk.js.map": "/erikeh.github.io/static/js/2.e0f54091.chunk.js.map",
+    "index.html": "/erikeh.github.io/index.html",
+    "static/css/2.dc73c9fe.chunk.css.map": "/erikeh.github.io/static/css/2.dc73c9fe.chunk.css.map",
+    "static/css/main.4a6536ac.chunk.css.map": "/erikeh.github.io/static/css/main.4a6536ac.chunk.css.map",
+    "static/js/2.e0f54091.chunk.js.LICENSE.txt": "/erikeh.github.io/static/js/2.e0f54091.chunk.js.LICENSE.txt",
+    "static/media/all.min.css": "/erikeh.github.io/static/media/fa-solid-900.efbd5d20.eot"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2c40c164.js",
+    "static/css/2.dc73c9fe.chunk.css",
+    "static/js/2.e0f54091.chunk.js",
+    "static/css/main.4a6536ac.chunk.css",
+    "static/js/main.d40a5753.chunk.js"
+  ]
+}
